@@ -50,19 +50,22 @@ require("inc/config.php");
 <h2 id="personal_shopper_headline">OUR PERSONAL SHOPPER RECOMMENDS</h2>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border"> 
-      <?php $result = $connection -> query("SELECT DISTINCT matches.id,name,color,price,used FROM matches JOIN items_matches ON items_matches.matches_id = matches.id = ".$_GET['id']);
-      error_log($connection -> error);
-      while ($row = $result -> fetch_assoc()) {
+      <?php 
+      // $result = $connection -> query("SELECT DISTINCT id,name,color,price,used FROM matches JOIN items_matches ON items_matches.matches_id = ".$_GET['id']);
+      // error_log($connection -> error);
+      // while ($row = $result -> fetch_assoc()) {
       ?>
-      <div class="row" >
+<!--       <div class="row" >
         <div class="small-4 medium-4 large-4 columns border recommended">
           <img src="images/matches/<?php echo $row['image']; ?>">    
           <p class="attributes"><?php echo $row['name']; ?></p>
           <p class="item-price attributes">$<?php echo $row['price']; ?></p>
           <p class="attributes"><?php echo $row['color']; ?></p>
           <p class="attributes"><?php echo $row['used']; ?></p>
-        </div>
-      <?php } ?>
+        </div> -->
+      <?php 
+    // } 
+    ?>
       </div>
     </div>
   </div>

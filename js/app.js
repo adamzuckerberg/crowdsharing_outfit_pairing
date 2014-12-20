@@ -1,16 +1,25 @@
 $(document).ready(function(){
-  alert('load')
-    $("#item-to-rate").click(function() {
-  alert('click');
-});
 
-}); 
+      $('#tracy-dinunzio').mouseover(function(){
+      $('#tracy-yes-i-love-it').show();
+      }); 
 
-$(document).ready(function(){
+      $('#tracy-dinunzio').mouseout(function(){
+      $('#tracy-yes-i-love-it').hide();
+      });  
 
+      $('#girl-with-tongue').mouseover(function(){
+      $('#hells-no').show();
+      });  
+
+      $('#girl-with-tongue').mouseout(function(){
+      $('#hells-no').hide();
+      });  
+    
+// on swiperight  
     $("#item-to-rate").on("swiperight",function(){
-      console.log('swiperight');
       $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
+      $('#tracy-dinunzio').hide();
       $(this).addClass('rotate-right');
       $(this).find('.status').remove();
 
@@ -26,19 +35,55 @@ $(document).ready(function(){
           console.log(data);
 
         setTimeout(function(){
+        $('#tracy-dinunzio').show();
         $('#item-to-rate img').data('id',data.item_id);
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         window.location.reload();
-        },900);
+        },1200);
       });
-
-
+        setTimeout(function(){
+           window.location.reload();
+        },1000);    
     });  
 
+// on click right
+    $('#tracy-dinunzio').click(function(){
+      $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
+      $('#tracy-dinunzio').hide();
+      $("#item-to-rate").addClass('rotate-right');
+      $("#item-to-rate").find('.status').remove();
+
+      $("#item-to-rate").append('<div class="status like">Love It!</div>');      
+
+       var item = $('#item-to-rate img').data('id');
+       var match = $('#item-to-rate img').data('match');
+
+       $.get('ajax/match-item.php',{
+            item_id: item,
+            match_id: match
+         }, function(data){
+          console.log(data);
+
+        setTimeout(function(){
+        $('#tracy-dinunzio').show();
+        $('#item-to-rate img').data('id',data.item_id);
+        $('#item-to-rate img').attr('src',data.image);
+        $('#item-to-rate').addClass('reset-after-rotate-right');
+        $('.status').remove();
+        window.location.reload();
+        },1200);
+      });
+        setTimeout(function(){
+           window.location.reload();
+        },1000);    
+    }); 
+
+// on swipeleft
    $("#item-to-rate").on("swipeleft",function(){
     $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
+    $('#girl-with-tongue').hide();
     $(this).addClass('rotate-left');
     $('#item-to-rate').find('.status').remove();
     $(this).append('<div class="status dislike">Hell\'s No!</div>');
@@ -48,9 +93,29 @@ $(document).ready(function(){
     $('.status').remove();
     window.location.reload();  
     },900);
+        setTimeout(function(){
+           window.location.reload();
+        },1000);  
+  });  
    
+// onclick
+   $('#girl-with-tongue').click(function(){
+    $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
+    $("#item-to-rate").addClass('rotate-left');
+    $("#item-to-rate").find('.status').remove();
+    $("#item-to-rate").append('<div class="status dislike">Hell\'s No!</div>');
+
+    setTimeout(function(){
+    $('#item-to-rate').addClass('reset-after-rotate-left');
+    $('.status').remove();
+    window.location.reload();  
+    },900);
+            setTimeout(function(){
+           window.location.reload();
+        },1000);  
 
   });
+
 });
 
 
