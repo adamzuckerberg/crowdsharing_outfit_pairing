@@ -21,7 +21,7 @@ require("inc/config.php");
       </li>
     </ul>
   </nav>
-  <h2 class="tagline">BECAUSE EVERYONE LIKES SHOPPING WITH A FRIEND</h2>
+  <h2 class="tagline">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
   <div class=row>
     <div class="small-5 medium-5 large-5 columns" id="item_to_match_section">
       <h4>Item to Match</h4>
@@ -29,8 +29,7 @@ require("inc/config.php");
       <p>Brooks Brothers Double Breasted Pea Coat</p>
     </div>
     <div class="small-7 medium-7 large-7 columns" id="tradesy_personal_shopper_tool_section">
-      <h4>Personal-Shopper Tool: Does this Match?</h4>
-      <p id="if-yes-no-swipe">(If yes, swipe right. If no, swipe left)</p>
+      <h4>Personal-Shopper Tool: Does This Item Match?</h4>
         <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
         <img src="images/unlike-woman.jpg">
         <h5 id="hells-no">Hell's No!</h5>

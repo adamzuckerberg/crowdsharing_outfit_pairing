@@ -56,6 +56,7 @@ vertical-align: bottom;
   color: green;
   position: relative;
   z-index: 100;
+  display: none;
 }
 #item-to-rate {
 	padding-top: 20%;
@@ -63,6 +64,7 @@ vertical-align: bottom;
 }
 #hells-no {
   color: red;
+  display: none;
 }
 #tracy-dinunzio  {
 	padding-top: 5%;
@@ -73,14 +75,15 @@ vertical-align: bottom;
   opacity: 0.5;
   position: relative;
   z-index: 100;
-  border-radius: 35%;
+  border-radius: 30%;
+  transition-duration: .7s;
 }
 #tracy-dinunzio img:hover  {
   border: 3px solid green;
   border-radius: 40%;
   opacity: 0.9;
   transition-property: opacity, border-radius, border;
-  transition-duration: .2s, .3s, .3s;
+  transition-duration: .2s, .7s, .3s;
 }
 #girl-with-tongue {
     padding-top: 18%;
@@ -90,13 +93,15 @@ vertical-align: bottom;
   position: relative;
   z-index: 100;
   border-radius: 35%;
+  transition-property: opacity, border-radius, border;
+  transition-duration: .7s;
 }
 #girl-with-tongue img:hover {
   border: 2px solid red;
   opacity: 1.0;
   border-radius: 50%;
   transition-property: opacity, border-radius, border;
-  transition-duration: .2s, .3s, .3s;
+  transition-duration: .2s, .7s, .3s;
 }
 .recommended img {
 	border: 4px solid black;

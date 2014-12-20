@@ -86,7 +86,7 @@ $(document).ready(function(){
     $('#girl-with-tongue').hide();
     $(this).addClass('rotate-left');
     $('#item-to-rate').find('.status').remove();
-    $(this).append('<div class="status dislike">Hell\'s No!</div>');
+    $(this).append('<div class="status dislike">Dislike!</div>');
 
     setTimeout(function(){
     $('#item-to-rate').addClass('reset-after-rotate-left');
@@ -103,7 +103,7 @@ $(document).ready(function(){
     $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
     $("#item-to-rate").addClass('rotate-left');
     $("#item-to-rate").find('.status').remove();
-    $("#item-to-rate").append('<div class="status dislike">Hell\'s No!</div>');
+    $("#item-to-rate").append('<div class="status dislike">Dislike!</div>');
 
     setTimeout(function(){
     $('#item-to-rate').addClass('reset-after-rotate-left');
