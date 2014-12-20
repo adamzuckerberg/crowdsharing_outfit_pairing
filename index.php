@@ -22,15 +22,15 @@ require("inc/config.php");
       </li>
     </ul>
   </nav>
-  <h2 class="tagline">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
+  <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
   <div class=row>
     <div class="small-5 medium-5 large-5 columns" id="item_to_match_section">
-      <h4>Item to Match</h4>
+      <h4 class="show-for-medium-up">Item to Match</h4>
       <img src="images/brooks-brothers-coat-navy-1147498.jpg">
-      <p>Brooks Brothers Double Breasted Pea Coat</p>
+      <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
     </div>
-    <div class="small-7 medium-7 large-7 columns" id="tradesy_personal_shopper_tool_section">
-      <h4>Personal-Shopper Tool: Does This Item Match?</h4>
+    <div class="small-push-12 medium-7 large-7 columns" id="tradesy_personal_shopper_tool_section">
+      <h4 class="show-for-medium-up">Personal-Shopper Tool: Does This Item Match?</h4>
         <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
         <img src="images/unlike-woman.jpg">
         <h5 id="hells-no">Hell's No!</h5>
@@ -45,11 +45,11 @@ require("inc/config.php");
     </div>
   </div>
   <div class="row">
-    <div class="small-12 large-12"></div>
+    <div class="large-12 show-for-medium-up"></div>
   </div>
-    <h2 id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
-    <h2 id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
-    <div class="button" id="clear_all_items_from_bag">CLEAR ITEMS</div>
+    <h2 class="show-for-medium-up" id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
+    <h2 class="show-for-medium-up" id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
+    <div class="button show-for-medium-up" id="clear_all_items_from_bag">CLEAR ITEMS</div>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border">
       <?php 
@@ -57,17 +57,17 @@ require("inc/config.php");
       error_log($connection -> error);
       while ($row = $result -> fetch_assoc()) {
       ?>
-      <div class="row" id="recommended_items">
+      <div class="row show-for-medium-up" id="recommended_items">
         <div class="small-4 medium-4 large-4 columns border recommended">
           
           <div id="recommended_item_with_button">
-            <img src="images/matches/<?php echo $row['image']; ?>"> 
+            <img id="recommended_item_image" src="images/matches/<?php echo $row['image']; ?>"> 
             <a href="http://www.tradesy.com" class="button" id="add_to_bag">ADD TO BAG</a> 
           </div>  
-          <p class="item-name attributes"><?php echo $row['name']; ?></p>
-          <p class="item-price attributes">$<?php echo $row['price']; ?></p>
-          <p class="attributes"><?php echo $row['color']; ?></p>
-          <p class="attributes"><?php echo $row['used']; ?></p>
+          <p id="recommended_item_name" class="item-name attributes"><?php echo $row['name']; ?></p>
+          <p id="recommended_item_price" class="item-price attributes">$<?php echo $row['price']; ?></p>
+          <p id="recommended_item_color" class="attributes"><?php echo $row['color']; ?></p>
+          <p id="recommended_item_used" class="attributes"><?php echo $row['used']; ?></p>
         </div>
       <?php  } 
     ?>
@@ -86,7 +86,6 @@ require("inc/config.php");
   </body>
   <footer class="row">
     <div class="large-12 columns">
-      <hr/>
       <div class="row">
         <div class="large-6 columns">
         </div>

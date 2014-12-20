@@ -75,11 +75,34 @@ $(document).ready(function(){
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         },1200);
+      });  
+
+       // var recommended_name = ('#recommended_item_name').html();
+       // var recommended_color = ('#recommended_item_color').html();
+       // var recommended_price = ('#recommended_item_price').html();
+       // var recommended_used = ('#recommended_item_used').html();
+       // var recommended_image = ('#recommended_item_image').html();
+//refresh cart
+
+      $.ajax({
+        type: "GET",
+        url: "ajax/refresh-cart.php",
+        data: {name: recommended_name,
+              color: recommended_color,
+              price: recommended_price,
+              used: recommended_used,
+              image: recommended_image
+        },
+        error: function(xhr, statusText) { alert("Error: "+statusText); },
+        success: function(){ 
+          alert('success');
+          $('#recommended_items').css('background','black');
+          $('#recommended_items img').attr('src',data.recommended_image);
+        }
       });
-        setTimeout(function(){
-        $('#recommended_items').css('border','2px solid red');
-        },2000);    
-    }); 
+
+    });
+
 
 // on swipeleft
    $("#item-to-rate").on("swipeleft",function(){
@@ -138,25 +161,6 @@ $(document).ready(function(){
         },1000);    
     });
 
-
-   // $('#clear_all_items_from_bag').click(function(){
-   //    $.get( "ajax/destroy-items.php", function( data ) {
-   //      alert('success')
-   //      $('#recommended_items').remove();
-   //      $('#clear_all_items_from_bag').show();
-   //          });
-   //        });
-  // var empty_data = $('#recommended_items').innerHTML
-
-  // $('#clear_all_items_from_bag').click(function(){
-  //     $.get( "ajax/destroy-items.php", function( data ) {
-  //       alert('success')
-  //       $('#recommended_items').innerHTML = "";
-  //       $('#clear_all_items_from_bag').show();
-  //           });
-  //         });
-
-  // $.get(url,data,callback);
    $('#clear_all_items_from_bag').click(function(){
       $.ajax({
         type: "GET",
