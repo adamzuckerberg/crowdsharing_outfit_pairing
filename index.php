@@ -11,6 +11,7 @@ require("inc/config.php");
     <link rel="stylesheet" href="css/foundation.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico">
     <script src="js/vendor/modernizr.js"></script>
   </head>
   <body>

@@ -139,16 +139,34 @@ $(document).ready(function(){
     });
 
 
+   // $('#clear_all_items_from_bag').click(function(){
+   //    $.get( "ajax/destroy-items.php", function( data ) {
+   //      alert('success')
+   //      $('#recommended_items').remove();
+   //      $('#clear_all_items_from_bag').show();
+   //          });
+   //        });
+  // var empty_data = $('#recommended_items').innerHTML
+
+  // $('#clear_all_items_from_bag').click(function(){
+  //     $.get( "ajax/destroy-items.php", function( data ) {
+  //       alert('success')
+  //       $('#recommended_items').innerHTML = "";
+  //       $('#clear_all_items_from_bag').show();
+  //           });
+  //         });
+
+  // $.get(url,data,callback);
    $('#clear_all_items_from_bag').click(function(){
-      $.get( "ajax/destroy-items.php", function( data ) {
-        alert('success')
-        $('#recommended_items').remove();
-        $('#clear_all_items_from_bag').show();
-            });
-          });
-
-
-
+      $.ajax({
+        type: "GET",
+        url: "ajax/destroy-items.php",
+        error: function(xhr, statusText) { alert("Error: "+statusText); },
+        success: function(){ 
+          $('#recommended_items').empty();
+        }
+      });
+    });
 
 
 
