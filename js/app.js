@@ -35,7 +35,7 @@ $(document).ready(function(){
           console.log(data);
 
         setTimeout(function(){
-        $('#tracy-dinunzio').show();
+        $('#tracy-dinunzio').show();     
         $('#item-to-rate img').data('id',data.item_id);
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
@@ -68,15 +68,16 @@ $(document).ready(function(){
 
         setTimeout(function(){
         $('#tracy-dinunzio').show();
+        $('#item-to-rate img').css('border','2px solid red'); 
         $('#item-to-rate img').data('id',data.item_id);
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
-        window.location.reload();
+        // window.location.reload();
         },1200);
       });
         setTimeout(function(){
-           window.location.reload();
+           // window.location.reload();
         },1000);    
     }); 
 

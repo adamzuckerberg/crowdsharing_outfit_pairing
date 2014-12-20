@@ -5,5 +5,5 @@ $query = $connection -> query("SELECT id, image FROM matches WHERE id = ".($_GET
 $connection -> close();
 $array = $query -> fetch_assoc();
 header("Content-Type: application/json");
-echo json_encode(array('item_id'=>$array['id'],'image'=>'images/matches/'.$array['image']));
+echo json_encode(array('item_id'=>intval($array['id']),'image'=>'images/matches/'.$array['image']));
 ?> 

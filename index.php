@@ -35,7 +35,7 @@ require("inc/config.php");
         <h5 id="hells-no">Hell's No!</h5>
         </div>
         <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
-        <img max-width="150px" src="images/louis-vuitton-cross-body-bag-1346232-1.jpg" data-id='2' data-match='9'>
+        <img max-width="150px" src="images/louis-vuitton-cross-body-bag-1346232-1.jpg" data-id='1' data-match='1'>
         </div>
         <div id="tracy-dinunzio" class="small-3 medium-3 large-3 columns border">
         <img src="images/tracy-dinunzio.jpg">
@@ -46,7 +46,8 @@ require("inc/config.php");
   <div class="row">
     <div class="small-12 large-12"></div>
   </div>
-<h2 id="personal_shopper_headline">OUR PERSONAL SHOPPER RECOMMENDS</h2>
+<h2 id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
+<p>ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</p>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border">
       <?php 
@@ -65,7 +66,7 @@ require("inc/config.php");
       <?php  } 
     ?>
       </div>
-     <h2 class="button alert">EMPTY ITEMS</h2>
+    <a href="#" class="button success">CLEAR ITEMS</a>
     </div>
   </div>
   <div class="row">
