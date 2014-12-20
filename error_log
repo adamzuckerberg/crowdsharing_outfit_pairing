@@ -1,6 +1,0 @@
-[19-Dec-2014 21:28:07 America/Denver] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
-[19-Dec-2014 21:28:07 America/Denver] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/ecstati5/public_html/tradesy/index.php on line 55
-[19-Dec-2014 21:52:23 America/Denver] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
-[19-Dec-2014 21:52:23 America/Denver] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/ecstati5/public_html/tradesy/index.php on line 55
-[19-Dec-2014 21:52:25 America/Denver] You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
-[19-Dec-2014 21:52:25 America/Denver] PHP Fatal error:  Call to a member function fetch_assoc() on a non-object in /home/ecstati5/public_html/tradesy/index.php on line 55
