@@ -46,8 +46,9 @@ require("inc/config.php");
   <div class="row">
     <div class="small-12 large-12"></div>
   </div>
-<h2 id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
-<h2 id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
+    <h2 id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
+    <h2 id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
+    <div class="button" id="clear_all_items_from_bag">CLEAR ITEMS</div>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border">
       <?php 
@@ -70,7 +71,6 @@ require("inc/config.php");
       <?php  } 
     ?>
       </div>
-    <a href="#" class="button success" id="clear_all_items_from_bag">CLEAR ITEMS</a>
     </div>
   </div>
   <div class="row">
