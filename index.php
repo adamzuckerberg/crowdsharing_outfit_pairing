@@ -47,7 +47,7 @@ require("inc/config.php");
     <div class="small-12 large-12"></div>
   </div>
 <h2 id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
-<p>ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</p>
+<h2 id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border">
       <?php 

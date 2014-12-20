@@ -22,11 +22,18 @@ letter-spacing: 2px;
 }
 h2#personal_shopper_headline {
 margin-top: 20px;
-float: left;
+text-align: left;
 font-weight: bold;
 font-size: 1.5em;
 padding-left: 7px;
 color: #313132;
+}
+h2#personal_shopper_tagline {
+margin-top: -10px;
+text-align: left;
+font-size: 0.94em;
+padding-left: 7px;
+color: #313132;  
 }
 #if-yes-no-swipe {
 margin-top: -10px;
@@ -184,3 +191,4 @@ font-size: 1.1em;
   text-shadow: none;
   max-height: 50px;
 }
+
