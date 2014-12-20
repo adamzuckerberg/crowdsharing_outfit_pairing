@@ -48,11 +48,9 @@ require("inc/config.php");
   </div>
 <h2 id="personal_shopper_headline">OUR PERSONAL SHOPPER RECOMMENDS</h2>
   <div class="row">
-    <div class="small-12 medium-12 large-12 columns border"> 
+    <div class="small-12 medium-12 large-12 columns border">
       <?php 
-      // $result = $connection -> query("SELECT DISTINCT matches.id,name,color,price,used FROM matches JOIN items_matches ON items_matches.matches_id = matches.id");
-       // $_GET['id']);
-      $result = $connection ->query("SELECT DISTINCT matches.id,matches.name,matches.color,matches.price,matches.used FROM `matches` JOIN `items_matches` ON items_matches.matches_id = matches.id");
+      $result = $connection ->query("SELECT DISTINCT matches.id,matches.name,matches.color,matches.price,matches.used,matches.image FROM `matches` JOIN `items_matches` ON items_matches.matches_id = matches.id");
       error_log($connection -> error);
       while ($row = $result -> fetch_assoc()) {
       ?>
@@ -67,6 +65,7 @@ require("inc/config.php");
       <?php  } 
     ?>
       </div>
+     <h2 class="button alert">EMPTY ITEMS</h2>
     </div>
   </div>
   <div class="row">
