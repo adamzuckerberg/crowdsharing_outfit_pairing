@@ -15,6 +15,8 @@ $(document).ready(function(){
       $('#girl-with-tongue').mouseout(function(){
       $('#hells-no').hide();
       });  
+
+      $('#clear_all_items_from_bag').show();
     
 // on swiperight  
     $("#item-to-rate").on("swiperight",function(){
@@ -56,7 +58,9 @@ $(document).ready(function(){
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
        var item = $('#item-to-rate img').data('id');
-       var match = $('#item-to-rate img').data('match');
+       var match = $('#item-to-rate img').data('id');
+
+      console.log('item:'+item+' '+'match'+match);
 
        $.get('ajax/match-item.php',{
             item_id: item,
@@ -73,7 +77,8 @@ $(document).ready(function(){
         },1200);
       });
         setTimeout(function(){
-        },1000);    
+        $('#recommended_items').css('border','2px solid red');
+        },2000);    
     }); 
 
 // on swipeleft
@@ -132,5 +137,19 @@ $(document).ready(function(){
         setTimeout(function(){
         },1000);    
     });
+
+
+   $('#clear_all_items_from_bag').click(function(){
+      $.get( "ajax/destroy-items.php", function( data ) {
+        alert('success')
+        $('#recommended_items').remove();
+        $('#clear_all_items_from_bag').show();
+            });
+          });
+
+
+
+
+
 
 });

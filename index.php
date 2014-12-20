@@ -35,7 +35,7 @@ require("inc/config.php");
         <h5 id="hells-no">Hell's No!</h5>
         </div>
         <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
-        <img max-width="150px" src="images/louis-vuitton-cross-body-bag-1346232-1.jpg" data-id='1' data-match='1'>
+        <img max-width="150px" src="images/louis-vuitton-shoulder-bag-1236231.jpg" data-id='1' data-match='1'>
         </div>
         <div id="tracy-dinunzio" class="small-3 medium-3 large-3 columns border">
         <img src="images/tracy-dinunzio.jpg">
@@ -55,10 +55,14 @@ require("inc/config.php");
       error_log($connection -> error);
       while ($row = $result -> fetch_assoc()) {
       ?>
-      <div class="row" >
+      <div class="row" id="recommended_items">
         <div class="small-4 medium-4 large-4 columns border recommended">
-          <img src="images/matches/<?php echo $row['image']; ?>">    
-          <p class="attributes"><?php echo $row['name']; ?></p>
+          
+          <div id="recommended_item_with_button">
+            <img src="images/matches/<?php echo $row['image']; ?>"> 
+            <a href="http://www.tradesy.com" class="button" id="add_to_bag">ADD TO BAG</a> 
+          </div>  
+          <p class="item-name attributes"><?php echo $row['name']; ?></p>
           <p class="item-price attributes">$<?php echo $row['price']; ?></p>
           <p class="attributes"><?php echo $row['color']; ?></p>
           <p class="attributes"><?php echo $row['used']; ?></p>
@@ -66,7 +70,7 @@ require("inc/config.php");
       <?php  } 
     ?>
       </div>
-    <a href="#" class="button success">CLEAR ITEMS</a>
+    <a href="#" class="button success" id="clear_all_items_from_bag">CLEAR ITEMS</a>
     </div>
   </div>
   <div class="row">
