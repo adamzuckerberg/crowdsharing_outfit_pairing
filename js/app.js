@@ -40,11 +40,9 @@ $(document).ready(function(){
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
-        window.location.reload();
         },1200);
       });
         setTimeout(function(){
-           window.location.reload();
         },1000);    
     });  
 
@@ -67,56 +65,72 @@ $(document).ready(function(){
           console.log(data);
 
         setTimeout(function(){
-        $('#tracy-dinunzio').show();
-        $('#item-to-rate img').css('border','2px solid red'); 
+        $('#tracy-dinunzio').show(); 
         $('#item-to-rate img').data('id',data.item_id);
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
-        // window.location.reload();
         },1200);
       });
         setTimeout(function(){
-           // window.location.reload();
         },1000);    
     }); 
 
 // on swipeleft
    $("#item-to-rate").on("swipeleft",function(){
     $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
-    $('#girl-with-tongue').hide();
     $(this).addClass('rotate-left');
     $('#item-to-rate').find('.status').remove();
     $(this).append('<div class="status dislike">Dislike!</div>');
 
-    setTimeout(function(){
-    $('#item-to-rate').addClass('reset-after-rotate-left');
-    $('.status').remove();
-    window.location.reload();  
-    },900);
+       var item = $('#item-to-rate img').data('id');
+       var match = $('#item-to-rate img').data('match');
+
+       $.get('ajax/match-item.php',{
+            item_id: item,
+            match_id: match
+         }, function(data){
+          console.log(data);
+
         setTimeout(function(){
-           window.location.reload();
-        },1000);  
-  });  
+        $('#girl-with-tongue').show();
+        $('#item-to-rate img').data('id',data.item_id);
+        $('#item-to-rate img').attr('src',data.image);
+        $('#item-to-rate').addClass('reset-after-rotate-right');
+        $('.status').remove();
+        },900);
+      });
+        setTimeout(function(){
+        },1000);    
+    });
    
-// onclick
+// onclick left
    $('#girl-with-tongue').click(function(){
+    // $('#girl-with-tongue').hide(); 
     $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
     $("#item-to-rate").addClass('rotate-left');
     $("#item-to-rate").find('.status').remove();
     $("#item-to-rate").append('<div class="status dislike">Dislike!</div>');
 
-    setTimeout(function(){
-    $('#item-to-rate').addClass('reset-after-rotate-left');
-    $('.status').remove();
-    window.location.reload();  
-    },900);
-            setTimeout(function(){
-           window.location.reload();
-        },1000);  
+       var item = $('#item-to-rate img').data('id');
+       var match = $('#item-to-rate img').data('match');
 
-  });
+       $.get('ajax/match-item.php',{
+            item_id: item,
+            match_id: match
+         }, function(data){
+          console.log(data);
+
+        setTimeout(function(){
+        $('#girl-with-tongue').show(); 
+        $('#item-to-rate img').data('id',data.item_id);
+        $('#item-to-rate img').attr('src',data.image);
+        $('#item-to-rate').addClass('reset-after-rotate-right');
+        $('.status').remove();
+        },900);
+      });
+        setTimeout(function(){
+        },1000);    
+    });
 
 });
-
-
