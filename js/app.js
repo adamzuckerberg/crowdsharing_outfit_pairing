@@ -11,12 +11,11 @@ $(document).ready(function() {
       $('#hells-no').hide();});  
     
 //swipe right towards CEO to match item
-    $("#item-to-rate").on("swiperight",function(){
+      $("#item-to-rate").on("swiperight",function(){
       $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
       $('#tracy-dinunzio').hide();
       $(this).addClass('rotate-right');
       $(this).find('.status').remove();
-
       $(this).append('<div class="status like">Love It!</div>');      
 
       var item = $('#item-to-rate img').data('id');
@@ -114,7 +113,7 @@ $(document).ready(function() {
       $.ajax({
         type: "GET",
         url: "ajax/destroy-items.php",
-        error: function(xhr, statusText) { alert("Error: "+statusText); },
+        error: function() { alert("ajax error")},
         success: function(){ 
           $('#recommended_items').empty();
         }
