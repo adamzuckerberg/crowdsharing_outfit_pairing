@@ -1,18 +1,14 @@
 $(document).ready(function() {
 
       $('#tracy-dinunzio').mouseover(function(){
-      $('#tracy-yes-i-love-it').show();
-      }); 
+      $('#tracy-yes-i-love-it').show();}); 
       $('#tracy-dinunzio').mouseout(function(){
-      $('#tracy-yes-i-love-it').hide();
-      });  
+      $('#tracy-yes-i-love-it').hide();});  
 
       $('#girl-with-tongue').mouseover(function(){
-      $('#hells-no').show(); 
-      });  
+      $('#hells-no').show(); });  
       $('#girl-with-tongue').mouseout(function(){
-      $('#hells-no').hide();
-      });  
+      $('#hells-no').hide();});  
     
 //swipe right towards CEO to match item
     $("#item-to-rate").on("swiperight",function(){
