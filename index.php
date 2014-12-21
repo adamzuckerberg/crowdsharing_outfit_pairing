@@ -7,7 +7,7 @@ require("inc/config.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tradesy | Outfits</title>
-    <link rel="stylesheet" href="css/foundation.css" />
+    <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     <link rel="shortcut icon" href="images/favicon.ico">
@@ -50,7 +50,7 @@ require("inc/config.php");
     <h2 class="show-for-medium-up" id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="button" id="clear_all_items_from_bag">CLEAR ITEMS</div>
+          <div class="button" id="clear_all_items_from_bag">DELETE ITEMS</div>
       </div>
       <div class="show-for-medium-up medium-4 large-4 columns">
       <div class="button success" id="show_all_items_in_bag">SHOW ITEMS</div>
