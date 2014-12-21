@@ -23,26 +23,22 @@ $(document).ready(function() {
 
       $(this).append('<div class="status like">Love It!</div>');      
 
-       var item = $('#item-to-rate img').data('id');
-       var match = $('#item-to-rate img').data('match');
+      var item = $('#item-to-rate img').data('id');
 
-       $.get('ajax/match-item.php',{
-            item_id: item,
-            match_id: match
-         }, function(data){
-          console.log(data);
-
-        setTimeout(function(){
-        $('#tracy-dinunzio').show();     
-        $('#item-to-rate img').data('id',data.item_id);
-        $('#item-to-rate img').attr('src',data.image);
-        $('#item-to-rate').addClass('reset-after-rotate-right');
-        $('.status').remove();
-        },1200);
-      });
-        setTimeout(function(){
-        },1000);    
-    });  
+         $.get('ajax/match-item.php',{
+              item_id: item
+          }, 
+          function(data){
+            console.log(data);
+            setTimeout(function(){
+            $('#tracy-dinunzio').show();     
+            $('#item-to-rate img').data('id',data.item_id);
+            $('#item-to-rate img').attr('src',data.image);
+            $('#item-to-rate').addClass('reset-after-rotate-right');
+            $('.status').remove();
+            },1200);
+          });
+      });  
 
 //click right on CEO to match item
     $('#tracy-dinunzio').click(function(){
@@ -53,10 +49,7 @@ $(document).ready(function() {
 
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
-       var item = $('#item-to-rate img').data('id');
-
-       // var match = $('#item-to-rate img').data('id');
-      console.log('item:'+item);
+      var item = $('#item-to-rate img').data('id');
 
          $.get('ajax/match-item.php',{
               item_id: item
@@ -80,15 +73,13 @@ $(document).ready(function() {
     $('#item-to-rate').find('.status').remove();
     $(this).append('<div class="status dislike">Dislike!</div>');
 
-       var item = $('#item-to-rate img').data('id');
-       var match = $('#item-to-rate img').data('match');
+      var item = $('#item-to-rate img').data('id');
 
-       $.get('ajax/match-item.php',{
-            item_id: item,
-            match_id: match
-         }, function(data){
+       $.get('ajax/no-match.php',{
+              item_id: item
+          }, 
+          function(data){
           console.log(data);
-
         setTimeout(function(){
         $('#girl-with-tongue').show();
         $('#item-to-rate img').data('id',data.item_id);
@@ -96,9 +87,7 @@ $(document).ready(function() {
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         },900);
-      });
-        setTimeout(function(){
-        },1000);    
+      });  
     });
    
 //click left on unhappy woman to go to next item
@@ -108,25 +97,21 @@ $(document).ready(function() {
     $("#item-to-rate").find('.status').remove();
     $("#item-to-rate").append('<div class="status dislike">Dislike!</div>');
 
-       var item = $('#item-to-rate img').data('id');
-       var match = $('#item-to-rate img').data('match');
+      var item = $('#item-to-rate img').data('id');
 
-       $.get('ajax/match-item.php',{
-            item_id: item,
-            match_id: match
-         }, function(data){
+       $.get('ajax/no-match.php',{
+              item_id: item
+          }, 
+          function(data){
           console.log(data);
-
         setTimeout(function(){
-        $('#girl-with-tongue').show(); 
+        $('#girl-with-tongue').show();
         $('#item-to-rate img').data('id',data.item_id);
         $('#item-to-rate img').attr('src',data.image);
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         },900);
-      });
-        setTimeout(function(){
-        },1000);    
+      });  
     });
 
    $('#clear_all_items_from_bag').click(function(){
