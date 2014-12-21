@@ -7,7 +7,7 @@ require("inc/config.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tradesy | Outfits</title>
-    <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico/?t=2">
+    <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico">
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
