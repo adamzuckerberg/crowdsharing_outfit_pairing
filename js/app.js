@@ -172,6 +172,9 @@ $(document).ready(function(){
       });
     });
 
+   $('#show_all_items_in_bag').click(function(){
+      window.location.reload();
+    });
 
 
 });

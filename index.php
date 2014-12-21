@@ -36,7 +36,7 @@ require("inc/config.php");
         <h5 id="hells-no">Hell's No!</h5>
         </div>
         <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
-        <img max-width="150px" src="images/louis-vuitton-shoulder-bag-1236231.jpg" data-id='1' data-match='1'>
+        <img max-width="150px" src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" data-id='1' data-match='1'>
         </div>
         <div id="tracy-dinunzio" class="small-3 medium-3 large-3 columns border">
         <img src="images/tracy-dinunzio.jpg">
@@ -49,7 +49,15 @@ require("inc/config.php");
   </div>
     <h2 class="show-for-medium-up" id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
     <h2 class="show-for-medium-up" id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
-    <div class="button show-for-medium-up" id="clear_all_items_from_bag">CLEAR ITEMS</div>
+    <div class=row>
+      <div class="show-for-medium-up medium-4 large-4 columns">
+          <div class="button" id="clear_all_items_from_bag">CLEAR ITEMS</div>
+      </div>
+      <div class="show-for-medium-up medium-4 large-4 columns">
+      <div class="button success" id="show_all_items_in_bag">SHOW ITEMS</div>
+      </div>    
+      <div class="show-for-medium-up medium-4 large-4 columns"></div>
+    </div>
   <div class="row">
     <div class="small-12 medium-12 large-12 columns border">
       <?php 
