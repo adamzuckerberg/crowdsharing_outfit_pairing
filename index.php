@@ -1,5 +1,4 @@
 <?php
-session_start();
 require("inc/config.php");
 ?>
 <!doctype html>
@@ -36,7 +35,7 @@ require("inc/config.php");
         <h5 id="hells-no">Hell's No!</h5>
         </div>
         <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
-        <img max-width="150px" src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" data-id='1' data-match='1'>
+        <img max-width="150px" src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" data-id='1'>
         </div>
         <div id="tracy-dinunzio" class="small-3 medium-3 large-3 columns border">
         <img src="images/tracy-dinunzio.jpg">
@@ -66,8 +65,7 @@ require("inc/config.php");
       while ($row = $result -> fetch_assoc()) {
       ?>
       <div class="row show-for-medium-up" id="recommended_items">
-        <div class="small-4 medium-4 large-4 columns border recommended">
-          
+        <div class="small-4 medium-4 large-4 columns border recommended"> 
           <div id="recommended_item_with_button">
             <img id="recommended_item_image" src="images/matches/<?php echo $row['image']; ?>"> 
             <a href="http://www.tradesy.com" class="button" id="add_to_bag">ADD TO BAG</a> 
@@ -77,8 +75,7 @@ require("inc/config.php");
           <p id="recommended_item_color" class="attributes"><?php echo $row['color']; ?></p>
           <p id="recommended_item_used" class="attributes"><?php echo $row['used']; ?></p>
         </div>
-      <?php  } 
-    ?>
+      <?php  } ?>
       </div>
     </div>
   </div>

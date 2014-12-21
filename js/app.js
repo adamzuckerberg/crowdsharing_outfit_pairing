@@ -1,24 +1,20 @@
-$(document).ready(function(){
+$(document).ready(function() {
 
       $('#tracy-dinunzio').mouseover(function(){
       $('#tracy-yes-i-love-it').show();
       }); 
-
       $('#tracy-dinunzio').mouseout(function(){
       $('#tracy-yes-i-love-it').hide();
       });  
 
       $('#girl-with-tongue').mouseover(function(){
-      $('#hells-no').show();
+      $('#hells-no').show(); 
       });  
-
       $('#girl-with-tongue').mouseout(function(){
       $('#hells-no').hide();
       });  
-
-      $('#clear_all_items_from_bag').show();
     
-// on swiperight  
+//swipe right towards CEO to match item
     $("#item-to-rate").on("swiperight",function(){
       $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
       $('#tracy-dinunzio').hide();
@@ -48,7 +44,7 @@ $(document).ready(function(){
         },1000);    
     });  
 
-// on click right
+//click right on CEO to match item
     $('#tracy-dinunzio').click(function(){
       $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
       $('#tracy-dinunzio').hide();
@@ -58,53 +54,26 @@ $(document).ready(function(){
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
        var item = $('#item-to-rate img').data('id');
-       var match = $('#item-to-rate img').data('id');
 
-      console.log('item:'+item+' '+'match'+match);
+       // var match = $('#item-to-rate img').data('id');
+      console.log('item:'+item);
 
-       $.get('ajax/match-item.php',{
-            item_id: item,
-            match_id: match
-         }, function(data){
+         $.get('ajax/match-item.php',{
+              item_id: item
+          }, 
+          function(data){
           console.log(data);
+          setTimeout(function(){
+          $('#tracy-dinunzio').show(); 
+          $('#item-to-rate img').data('id',data.item_id);
+          $('#item-to-rate img').attr('src',data.image);
+          $('#item-to-rate').addClass('reset-after-rotate-right');
+          $('.status').remove();
+          },1200);
+        });  
+    });  
 
-        setTimeout(function(){
-        $('#tracy-dinunzio').show(); 
-        $('#item-to-rate img').data('id',data.item_id);
-        $('#item-to-rate img').attr('src',data.image);
-        $('#item-to-rate').addClass('reset-after-rotate-right');
-        $('.status').remove();
-        },1200);
-      });  
-
-       // var recommended_name = ('#recommended_item_name').html();
-       // var recommended_color = ('#recommended_item_color').html();
-       // var recommended_price = ('#recommended_item_price').html();
-       // var recommended_used = ('#recommended_item_used').html();
-       // var recommended_image = ('#recommended_item_image').html();
-//refresh cart
-
-      $.ajax({
-        type: "GET",
-        url: "ajax/refresh-cart.php",
-        data: {name: recommended_name,
-              color: recommended_color,
-              price: recommended_price,
-              used: recommended_used,
-              image: recommended_image
-        },
-        error: function(xhr, statusText) { alert("Error: "+statusText); },
-        success: function(){ 
-          alert('success');
-          $('#recommended_items').css('background','black');
-          $('#recommended_items img').attr('src',data.recommended_image);
-        }
-      });
-
-    });
-
-
-// on swipeleft
+//swipe left towards unhappy woman to go to next item
    $("#item-to-rate").on("swipeleft",function(){
     $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
     $(this).addClass('rotate-left');
@@ -132,9 +101,8 @@ $(document).ready(function(){
         },1000);    
     });
    
-// onclick left
+//click left on unhappy woman to go to next item
    $('#girl-with-tongue').click(function(){
-    // $('#girl-with-tongue').hide(); 
     $("#item-to-rate").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
     $("#item-to-rate").addClass('rotate-left');
     $("#item-to-rate").find('.status').remove();
@@ -177,4 +145,4 @@ $(document).ready(function(){
     });
 
 
-});
+}); //close document.ready
