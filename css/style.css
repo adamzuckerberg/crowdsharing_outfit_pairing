@@ -152,7 +152,7 @@ user-select: none;
 .rotate-right {
 transform: rotate(30deg) scale(0.8);
 transition: 1s;
-margin-left: 200px;
+margin-left: 150px;
 cursor: e-resize;
 opacity: 0;
 }
@@ -184,10 +184,10 @@ color: green;
 text-transform: uppercase;
 font-size: 20px;
 position: absolute;
-top: 10px;
+top: -10px;
 right: 40px;
 text-shadow: none;
-max-height: 50px;
+max-height: 60px;
 }
 .dislike {
 border-radius: 5px;
