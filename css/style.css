@@ -179,7 +179,7 @@ max-height: 50px;
 .add-to-bag {
 background-color: #ee7873;
 border-color: #ee7873;
-color: !important #fff;
+color: #fff !important;
 text-align: center;
 opacity: 0.85;
 margin-left: 12%;

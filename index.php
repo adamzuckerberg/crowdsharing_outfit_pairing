@@ -67,7 +67,7 @@ require("inc/config.php");
           <div class="small-4 medium-4 large-4 columns border recommended"> 
             <div class="recommended-item-with-button">
               <img class="recommended-item-image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
-              <a href="http://www.tradesy.com" style="color:white;" class="button add-to-bag">ADD TO BAG</a> 
+              <a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a> 
             </div>  
             <p class="item-name attributes"><?php echo $row['name']; ?></p>
             <p class="item-price attributes">$<?php echo $row['price']; ?></p>
