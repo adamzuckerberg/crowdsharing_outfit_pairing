@@ -20,7 +20,7 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-         $.get('ajax/match-item.php',{
+         $.post('ajax/match-item.php',{
               item_id: item
           }, 
           function(data){
@@ -41,12 +41,11 @@ $(document).ready(function() {
       $('#tracy-dinunzio').hide();
       $("#item-to-rate").addClass('rotate-right');
       $("#item-to-rate").find('.status').remove();
-
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
       var item = $('#item-to-rate img').data('id');
 
-         $.get('ajax/match-item.php',{
+         $.post('ajax/match-item.php',{
               item_id: item
           }, 
           function(data){
@@ -70,7 +69,7 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-       $.get('ajax/no-match.php',{
+       $.post('ajax/no-match.php',{
               item_id: item
           }, 
           function(data){
@@ -94,7 +93,7 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-       $.get('ajax/no-match.php',{
+       $.post('ajax/no-match.php',{
               item_id: item
           }, 
           function(data){
@@ -111,7 +110,7 @@ $(document).ready(function() {
 
    $('#clear-all-items-from-bag').click(function(){
       $.ajax({
-        type: "GET",
+        type: "POST",
         url: "ajax/destroy-items.php",
         error: function(){ console.log('ajax error');},
         success: function(){ 

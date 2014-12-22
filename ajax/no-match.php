@@ -1,8 +1,7 @@
 <?php
 require(__dir__."/../inc/config.php");
 
-//loop to beginning of match items if on the last item in the db
-$match_item = $_GET['item_id'];
+$match_item = intval($_POST['item_id']);
 if ($match_item == 10) {
 	$match_item = 0;
 }
