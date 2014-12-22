@@ -109,18 +109,19 @@ $(document).ready(function() {
       });  
     });
 
-   $('#clear_all_items_from_bag').click(function(){
+   $('#clear-all-items-from-bag').click(function(){
       $.ajax({
         type: "GET",
         url: "ajax/destroy-items.php",
-        error: function() { alert("ajax error")},
+        error: function(){ console.log('ajax error');},
         success: function(){ 
-          $('#recommended_items').empty();
+          console.log('success');
+          $('#recommended-items').empty();
         }
       });
     });
 
-   $('#show_all_items_in_bag').click(function(){
+   $('#show-all-items-in-bag').click(function(){
       window.location.reload();
     });
 

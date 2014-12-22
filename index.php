@@ -23,12 +23,12 @@ require("inc/config.php");
     </nav>
     <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
     <div class=row>
-      <div class="small-5 medium-5 large-5 columns" id="item_to_match_section">
+      <div class="small-5 medium-5 large-5 columns item-to-match-section">
         <h4 class="show-for-medium-up">Item to Match</h4>
         <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
         <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
       </div>
-      <div class="small-push-12 medium-7 large-7 columns" id="tradesy_personal_shopper_tool_section">
+      <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Personal-Shopper Tool: Does This Item Match?</h4>
           <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
           <img src="images/unlike-woman.jpg" alt="Professional Woman with Tongue Out">
@@ -46,18 +46,18 @@ require("inc/config.php");
     <div class="row">
       <div class="large-12 show-for-medium-up"></div>
     </div>
-    <h2 class="show-for-medium-up" id="personal_shopper_headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
-    <h2 class="show-for-medium-up" id="personal_shopper_tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
+    <h2 class="show-for-medium-up personal-shopper-headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
+    <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="button" id="clear_all_items_from_bag">CLEAR ITEMS</div>
+          <div class="button" id="clear-all-items-from-bag">CLEAR ITEMS</div>
       </div>
       <div class="show-for-medium-up medium-4 large-4 columns">
-        <div class="button success" id="show_all_items_in_bag">SHOW ITEMS</div>
+        <div class="button success" id="show-all-items-in-bag">SHOW ITEMS</div>
       </div>    
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
-    <div class="row" id="recommended_items">
+    <div class="row" id="recommended-items">
       <div class="small-12 medium-12 large-12 columns border">
         <?php 
         $result = $connection ->query("SELECT DISTINCT matches.id,matches.name,matches.color,matches.price,matches.used,matches.image FROM `matches` JOIN `items_matches` ON items_matches.matches_id = matches.id WHERE items_matches.items_id = 1");
@@ -66,9 +66,9 @@ require("inc/config.php");
         ?>
         <div class="row show-for-medium-up">
           <div class="small-4 medium-4 large-4 columns border recommended"> 
-            <div class="recommended_item_with_button">
-              <img class="recommended_item_image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
-              <a href="http://www.tradesy.com" class="button" id="add_to_bag">ADD TO BAG</a> 
+            <div class="recommended-item-with-button">
+              <img class="recommended-item-image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
+              <a href="http://www.tradesy.com" class="button" id="add-to-bag">ADD TO BAG</a> 
             </div>  
             <p class="item-name attributes"><?php echo $row['name']; ?></p>
             <p class="item-price attributes">$<?php echo $row['price']; ?></p>

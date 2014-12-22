@@ -17,10 +17,7 @@ color: #B6B7BD;
 .tagline-match {
 color: #B6B7BD;
 }
-span#dot_outfits {
-letter-spacing: 2px;
-}
-h2#personal_shopper_headline {
+.personal-shopper-headline {
 margin-top: 20px;
 text-align: left;
 font-weight: bold;
@@ -28,30 +25,21 @@ font-size: 1.5em;
 padding-left: 7px;
 color: #313132;
 }
-h2#personal_shopper_tagline {
+.personal-shopper-tagline {
 margin-top: -10px;
 text-align: left;
 font-size: 0.94em;
 padding-left: 7px;
 color: #313132;  
 }
-#if-yes-no-swipe {
-margin-top: -10px;
-color: #B6B7BD;
-}
 p.attributes {
 margin: 0px 0px;
 font-size: 0.9em;
 }
-#item_to_match_section, #tradesy_personal_shopper_tool_section, .border {
-/*border: 2px solid green;*/
+.item-to-match-section, .tradesy-personal-shopper-tool-section, .border {
 vertical-align: bottom;
 }
-.shopper_tool {
-height: 100%;
-min-height: 300px;
-}
-#tradesy_personal_shopper_tool_section div {
+.tradesy-personal-shopper-tool-section div {
 height: 370px;
 text-align: center;
 }
@@ -188,7 +176,7 @@ left: 40px;
 text-shadow: none;
 max-height: 50px;
 }
-#add_to_bag {
+#add-to-bag {
 background-color: #ee7873;
 border-color: #ee7873;
 color: #fff;
@@ -199,17 +187,17 @@ margin-left: 15%;
 #add_to_bag:hover {
 opacity: 1;
 }
-.recommended_item_with_button:hover {
+.recommended-item-with-button:hover {
 border: 4px solid pink;
 border-radius: 5px;
 }
-.recommended_item_with_button {
+.recommended-item-with-button {
 padding: 10px 20px;
 }
-#clear_all_items_from_bag {
+#clear-all-items-from-bag {
 max-width: 200px;
 }
-#show_all_items_from_bag {
+#show-all-items-in-bag {
 max-width: 200px;
 }
 
@@ -246,5 +234,5 @@ top: 0px;
 left: 20px;
 text-shadow: none;
 max-height: 30px;
-}
+	}
 } /*//end media queries*/
