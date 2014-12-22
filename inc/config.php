@@ -21,19 +21,4 @@ try {
   exit;
 }
 
-
-
-
-
-
-
-
-
-// try {
-//   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);  
-// } catch (Exception $e)  {
-//     die("Database connection failed: " . mysqli_connect_error() ." ( " . mysqli_connect_errno() . ")");
-//   exit;
-// }
-
 ?>
