@@ -20,9 +20,7 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-         $.post('ajax/match-item.php',{
-              item_id: item
-          }, 
+       $.post('ajax/match-item.php',{item_id: item}, 
           function(data){
             console.log(data);
             setTimeout(function(){
@@ -32,7 +30,13 @@ $(document).ready(function() {
             $('#item-to-rate').addClass('reset-after-rotate-right');
             $('.status').remove();
             },1200);
-          });
+          })        
+          .done(function() {
+          console.log('success - item matched');
+          })     
+          .fail(function() {
+          console.log('ajax error');
+          })
       });  
 
 //click right on CEO to match item
@@ -45,20 +49,24 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-         $.post('ajax/match-item.php',{
-              item_id: item
-          }, 
+       $.post('ajax/match-item.php',{item_id: item}, 
           function(data){
-          console.log(data);
-          setTimeout(function(){
-          $('#tracy-dinunzio').show(); 
-          $('#item-to-rate img').data('id',data.item_id);
-          $('#item-to-rate img').attr('src',data.image);
-          $('#item-to-rate').addClass('reset-after-rotate-right');
-          $('.status').remove();
-          },1200);
-        });  
-    });  
+            console.log(data);
+            setTimeout(function(){
+            $('#tracy-dinunzio').show();     
+            $('#item-to-rate img').data('id',data.item_id);
+            $('#item-to-rate img').attr('src',data.image);
+            $('#item-to-rate').addClass('reset-after-rotate-right');
+            $('.status').remove();
+            },1200);
+          })        
+          .done(function() {
+          console.log('success - item matched');
+          })     
+          .fail(function() {
+          console.log('ajax error');
+          })
+      }); 
 
 //swipe left towards unhappy woman to go to next item
    $("#item-to-rate").on("swipeleft",function(){
@@ -69,11 +77,9 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-       $.post('ajax/no-match.php',{
-              item_id: item
-          }, 
-          function(data){
-          console.log(data);
+    $.post('ajax/no-match.php',{item_id: item}, 
+     function(data){
+        console.log(data);
         setTimeout(function(){
         $('#girl-with-tongue').show();
         $('#item-to-rate img').data('id',data.item_id);
@@ -81,8 +87,14 @@ $(document).ready(function() {
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         },900);
-      });  
-    });
+      })
+      .done(function() {
+      console.log('success - new item selected');
+      })     
+      .fail(function() {
+      console.log('ajax error');
+      })  
+  });
    
 //click left on unhappy woman to go to next item
    $('#girl-with-tongue').click(function(){
@@ -93,11 +105,9 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
-       $.post('ajax/no-match.php',{
-              item_id: item
-          }, 
-          function(data){
-          console.log(data);
+    $.post('ajax/no-match.php',{item_id: item}, 
+     function(data){
+        console.log(data);
         setTimeout(function(){
         $('#girl-with-tongue').show();
         $('#item-to-rate img').data('id',data.item_id);
@@ -105,19 +115,26 @@ $(document).ready(function() {
         $('#item-to-rate').addClass('reset-after-rotate-right');
         $('.status').remove();
         },900);
-      });  
+      })
+      .done(function() {
+      console.log('success - new item selected');
+      })     
+      .fail(function() {
+      console.log('ajax error');
+      })  
     });
 
    $('#clear-all-items-from-bag').click(function(){
-      $.ajax({
-        type: "POST",
-        url: "ajax/destroy-items.php",
-        error: function(){ console.log('ajax error');},
-        success: function(){ 
-          console.log('success');
-          $('#recommended-items').empty();
-        }
-      });
+      $.post( "ajax/destroy-items.php", function()  {
+        console.log('success - url');
+        $('#recommended-items').empty();
+      })
+        .done(function() {
+        console.log('success - empty cart');
+        })     
+        .fail(function() {
+        console.log('ajax error');
+        })
     });
 
    $('#show-all-items-in-bag').click(function(){
