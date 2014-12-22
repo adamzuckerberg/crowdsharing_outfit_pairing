@@ -61,7 +61,7 @@ require("inc/config.php");
       <div class="small-12 medium-12 large-12 columns border">
         <?php 
         $result = $connection->query("SELECT DISTINCT matches.id,matches.name,matches.color,matches.price,matches.used,matches.image FROM `matches` JOIN `items_matches` ON items_matches.matches_id = matches.id WHERE items_matches.items_id = 1");
-        while ($row = $result->fetchAll(PDO::FETCH_ASSOC)) {
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         ?>
         <div class="row show-for-medium-up">
           <div class="small-4 medium-4 large-4 columns border recommended"> 
