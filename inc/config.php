@@ -13,10 +13,27 @@
   // define("DB_NAME","ecstati5_tradesy");
 
 try {
-  $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);  
+  $connection = new PDO('mysql:host='.DB_SERVER.';dbname='.DB_NAME,DB_USER,DB_PASS);
+  // $connection = new PDO(DB_SERVER, DB_USER, DB_PASS, DB_NAME);
+  $connection->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 } catch (Exception $e)  {
-    die("Database connection failed: " . mysqli_connect_error() ." ( " . mysqli_connect_errno() . ")");
+   echo "Failed: " . $e->getMessage();
   exit;
 }
+
+
+
+
+
+
+
+
+
+// try {
+//   $connection = mysqli_connect(DB_SERVER, DB_USER, DB_PASS, DB_NAME);  
+// } catch (Exception $e)  {
+//     die("Database connection failed: " . mysqli_connect_error() ." ( " . mysqli_connect_errno() . ")");
+//   exit;
+// }
 
 ?>
