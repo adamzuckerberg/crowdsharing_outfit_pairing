@@ -176,16 +176,19 @@ left: 40px;
 text-shadow: none;
 max-height: 50px;
 }
-#add-to-bag {
+.add-to-bag {
+background-color: #ee7873;
+border-color: #ee7873;
+color: !important #fff;
+text-align: center;
+opacity: 0.85;
+margin-left: 12%;
+}
+.add-to-bag:hover {
+opacity: 1;
 background-color: #ee7873;
 border-color: #ee7873;
 color: #fff;
-text-align: center;
-opacity: 0.8;
-margin-left: 15%;
-}
-#add-to-bag:hover {
-opacity: 1;
 }
 .recommended-item-with-button:hover {
 border: 4px solid pink;

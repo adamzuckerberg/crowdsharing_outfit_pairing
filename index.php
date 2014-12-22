@@ -31,15 +31,15 @@ require("inc/config.php");
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Personal-Shopper Tool: Does This Item Match?</h4>
           <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
-          <img src="images/unlike-woman.jpg" alt="Professional Woman with Tongue Out">
-          <h5 id="hells-no">Hells No!</h5>
+            <img src="images/unlike-woman.jpg" alt="Professional Woman with Tongue Out">
+            <h5 id="hells-no">Hells No!</h5>
           </div>
           <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
-          <img src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" alt="Louis Vuitton Shoulder Bag" data-id='1'>
+            <img src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" alt="Louis Vuitton Shoulder Bag" data-id='1'>
           </div>
           <div id="tracy-dinunzio" class="small-3 medium-3 large-3 columns border">
-          <img src="images/tracy-dinunzio.jpg" alt="Tracy Dinunzio, CEO">
-          <h5 id="tracy-yes-i-love-it">Yes, I Love It!</h5>
+            <img src="images/tracy-dinunzio.jpg" alt="Tracy Dinunzio, CEO">
+            <h5 id="tracy-yes-i-love-it">Yes, I Love It!</h5>
           </div>
       </div>
     </div>
@@ -67,7 +67,7 @@ require("inc/config.php");
           <div class="small-4 medium-4 large-4 columns border recommended"> 
             <div class="recommended-item-with-button">
               <img class="recommended-item-image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
-              <a href="http://www.tradesy.com" class="button" id="add-to-bag">ADD TO BAG</a> 
+              <a href="http://www.tradesy.com" style="color:white;" class="button add-to-bag">ADD TO BAG</a> 
             </div>  
             <p class="item-name attributes"><?php echo $row['name']; ?></p>
             <p class="item-price attributes">$<?php echo $row['price']; ?></p>
