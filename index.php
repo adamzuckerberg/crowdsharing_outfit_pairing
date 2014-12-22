@@ -32,7 +32,7 @@ require("inc/config.php");
         <h4 class="show-for-medium-up">Personal-Shopper Tool: Does This Item Match?</h4>
           <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
           <img src="images/unlike-woman.jpg" alt="Professional Woman with Tongue Out">
-          <h5 id="hells-no">Hell's No!</h5>
+          <h5 id="hells-no">Hells No!</h5>
           </div>
           <div id="item-to-rate" class="small-2 medium-2 large-2 columns border">
           <img src="images/matches/louis-vuitton-shoulder-bag-1236231.jpg" alt="Louis Vuitton Shoulder Bag" data-id='1'>
