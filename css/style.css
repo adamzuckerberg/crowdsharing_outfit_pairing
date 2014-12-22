@@ -206,7 +206,7 @@ media queries
 *******************************************/
 
 @media only screen and (max-width: 40em) {
-#item_to_match_section{
+.item-to-match-section{
 margin-left: 30%;
 }
 .like {
