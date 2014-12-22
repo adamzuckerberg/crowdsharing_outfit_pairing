@@ -12,4 +12,5 @@ $connection -> close();
 $array_new_item = $new_item -> fetch_assoc();
 header("Content-Type: application/json");
 echo json_encode(array('item_id'=>intval($array_new_item['id']),'image'=>'images/matches/'.$array_new_item['image']));
+
 ?> 
