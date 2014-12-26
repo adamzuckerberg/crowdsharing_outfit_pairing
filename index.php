@@ -27,7 +27,7 @@ require("inc/config.php");
         <h4 class="show-for-medium-up">Item to Match</h4>
         <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
         <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
-        <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius button">ADD ITEM</a>
+        <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Does This Item Match?</h4>
@@ -51,10 +51,10 @@ require("inc/config.php");
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="tiny button alert" id="clear-all-items-from-bag">DELETE MATCHED ITEMS</div>
+          <div class="small button alert" id="clear-all-items-from-bag">DELETE ALL</div>
       </div>
       <div class="show-for-medium-up medium-4 large-4 columns">
-        <div class="button success" id="show-all-items-in-bag">SHOW ITEMS</div>
+        <div class="small button success" id="show-all-items-in-bag">SHOW ITEMS</div>
       </div>    
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
@@ -107,13 +107,13 @@ require("inc/config.php");
         </div>
         <div class="row">
           <div class="large-6 columns">
-            <label>YOUR PRICE
-              <input type="text" placeholder="sale price" />
+            <label>SELLING PRICE
+              <input type="text" placeholder="0.00" />
             </label> 
           </div>
           <div class="large-6 columns">
-            <label>RETAIL PRICE
-              <input type="text" placeholder="retail price"/>
+            <label>RETAIL PRICE (optional)
+              <input type="text" placeholder="0.00"/>
             </label> 
           </div>      
         </div>

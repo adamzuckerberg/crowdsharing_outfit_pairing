@@ -1,5 +1,4 @@
-.ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport
-{
+.ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport {
 background: transparent !important;
 }
 h1#tradesy {
@@ -138,18 +137,31 @@ font-size: 1em;
 margin-top: 10px;
 }
 .rotate-right {
-transform: rotate(30deg) scale(0.8);
-transition: 1s;
+-webkit-transform: rotate(30deg) scale(0.8);
+-moz-transform:    rotate(30deg) scale(0.8);
+-ms-transform:     rotate(30deg) scale(0.8);
+-o-transform:      rotate(30deg) scale(0.8);
+transform:         rotate(30deg) scale(0.8);
+-webkit-transition: 1.2s;
+-moz-transition: 1.2s;
+-o-transition: 1.2s;
+transition: 1.2s;
 margin-left: 150px;
-cursor: e-resize;
 opacity: 0;
 }
 .rotate-left {
-transform: rotate(-30deg) scale(0.8);
-transition: 1s;
+-webkit-transform: rotate(-30deg) scale(0.8);
+-moz-transform:    rotate(-30deg) scale(0.8);
+-ms-transform:     rotate(-30deg) scale(0.8);
+-o-transform:      rotate(-30deg) scale(0.8);
+transform:         rotate(-30deg) scale(0.8);
+-webkit-transition: 1.2s;
+-moz-transition: 1.2s;
+-o-transition: 1.2s;
+transition: 1.2s;
+margin-left: 150px;
 opacity: 0;
 margin-left: -200px;
-cursor: w-resize;
 }
 .reset-after-rotate-left {
 transform: rotate(0deg) scale(1);
@@ -251,5 +263,8 @@ top: 0px;
 left: 20px;
 text-shadow: none;
 max-height: 30px;
-	}
+}
+
+
+
 } /*//end media queries*/
