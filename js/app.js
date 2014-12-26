@@ -49,6 +49,7 @@ $(document).ready(function() {
 
       var item = $('#item-to-rate img').data('id');
 
+//reveal new match item
        $.post('ajax/match-item.php',{item_id: item}, 
           function(data){
             console.log(data);
@@ -66,7 +67,22 @@ $(document).ready(function() {
           .fail(function() {
           console.log('ajax error');
           })
-      }); 
+
+//show all matched items
+       $.get('ajax/show-items.php',function(data){ 
+          $('.recommended-item-image').data('id',data.item_id);                   
+          $('.recommended-item-image').attr('src',data.item_image);
+          $('.item-name').attr('src',data.item_name);
+            // alert(data);
+       })     
+        .done(function() {
+        console.log('success - item matched');
+        })     
+        .fail(function() {
+        console.log('ajax error');
+        })
+
+    }); //end click right on CEO
 
 //swipe left towards unhappy woman to go to next item
    $("#item-to-rate").on("swipeleft",function(){
