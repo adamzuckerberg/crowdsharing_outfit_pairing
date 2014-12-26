@@ -14,6 +14,7 @@ $array = $all_items->fetchAll(PDO::FETCH_ASSOC);
 // var_dump($array);
 header("Content-Type: application/json");
 echo json_encode($array);
-// echo json_encode(array('item_id'=>intval($array['id']),'item_name'=>($array['name']),'item_price'=>($array['price']),'item_color'=>($array['color']),'item_used'=>($array['used']),'item_image'=>'images/matches/'.$array['image']));
-// echo json_encode(array('item_id'=>($array['id'])));
+// echo json_encode(array('item_id'=>intval($array['id']),'image'=>'images/matches/'.$array['image']));
+
+// echo json_encode(array('item_id'=>intval($array['id']),'item_name'=>$array['name'],'item_price'=>$array['price'],'item_color'=>$array['color'],'item_used'=>$array['used'],'item_image'=>'images/matches/'.$array['image']));
 ?> 

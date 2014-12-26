@@ -69,11 +69,19 @@ $(document).ready(function() {
           })
 
 //show all matched items
-       $.get('ajax/show-items.php',function(data){ 
-          $('.recommended-item-image').data('id',data.item_id);                   
-          $('.recommended-item-image').attr('src',data.item_image);
-          $('.item-name').attr('src',data.item_name);
-            // alert(data);
+       $.get('ajax/show-items.php',
+        function(matches){               
+          for (var i=0; i<matches.length; i+=1) {
+            $('.recommended-item-image').attr('src','images/matches/'+matches[i].image);
+            $('.item-name').html(matches[i].name);
+            $('.item-price').html('$'+matches[i].price);
+            $('.item-used').html(matches[i].used);
+            console.log(matches[i].name); 
+            console.log(matches[i].price); 
+            console.log(matches[i].used);
+            console.log(matches[i].image);
+            console.log(matches[i].id);                     
+          }
        })     
         .done(function() {
         console.log('success - item matched');

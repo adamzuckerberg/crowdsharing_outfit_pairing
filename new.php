@@ -6,7 +6,7 @@ require("inc/config.php");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PearSorbet | Crowdsourced Clothes Pairing </title>
+    <title>Tradesy | Outfits</title>
     <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -17,7 +17,7 @@ require("inc/config.php");
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1 id="tradesy">PEAR SORBET</h1>
+          <h1 id="tradesy">TRADESY</h1>
         </li>
       </ul>
     </nav>
@@ -27,7 +27,7 @@ require("inc/config.php");
         <h4 class="show-for-medium-up">Item to Match</h4>
         <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
         <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
-        <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
+        <div class="button" id="add-new-item-primary">START MATCHING</div>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Does This Item Match?</h4>
@@ -51,81 +51,33 @@ require("inc/config.php");
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="small button alert" id="clear-all-items-from-bag">DELETE ALL</div>
+          <div class="button" id="clear-all-items-from-bag">CLEAR ITEMS</div>
       </div>
       <div class="show-for-medium-up medium-4 large-4 columns">
-        <div class="small button success" id="show-all-items-in-bag">SHOW ITEMS</div>
+        <div class="button success" id="show-all-items-in-bag">SHOW ITEMS</div>
       </div>    
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
     <div class="row" id="recommended-items">
       <div class="small-12 medium-12 large-12 columns border">
+        <?php 
+        $result = $connection->query("SELECT DISTINCT matches.id,matches.name,matches.color,matches.price,matches.used,matches.image FROM `matches` JOIN `items_matches` ON items_matches.matches_id = matches.id WHERE items_matches.items_id = 1");
+        while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+        ?>
         <div class="row show-for-medium-up">
           <div class="small-4 medium-4 large-4 columns border recommended"> 
             <div class="recommended-item-with-button">
-              <img class="recommended-item-image" src="" alt=""> 
+              <img class="recommended-item-image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
               <a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a> 
-            </div>       
-            <p class="item-name attributes"></p>
-            <p class="item-price attributes"></p>
-            <p class="item-used attributes"></p>
+            </div>  
+            <p class="item-name attributes"><?php echo $row['name']; ?></p>
+            <p class="item-price attributes">$<?php echo $row['price']; ?></p>
+            <p class="attributes"><?php echo $row['color']; ?></p>
+            <p class="attributes"><?php echo $row['used']; ?></p>
           </div>
+        <?php  } ?>
         </div>
       </div>
-    </div>
-    <div id="add-item-modal" class="reveal-modal" data-reveal>
-      <h2>Add a New Item</h2>
-      <form>
-        <div class="row">
-          <div class="large-12 columns">
-            <label>NAME
-              <input type="text" />
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>COLOR
-              <input type="text"/>
-            </label>
-          </div>
-          <div class="large-6 columns">
-            <label>CONDITION
-              <select>
-                <option value="husker">New</option>
-                <option value="starbuck">Like New</option>
-                <option value="hotdog">Gently Used</option>
-              </select>
-            </label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>SELLING PRICE
-              <input type="text" placeholder="0.00" />
-            </label> 
-          </div>
-          <div class="large-6 columns">
-            <label>RETAIL PRICE (optional)
-              <input type="text" placeholder="0.00"/>
-            </label> 
-          </div>      
-        </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>UPLOAD PHOTO
-                <input type="file" id="file" accept="image/*" name="file" multiple value="Add photos" disabled onchange="showThumbnails()"/>
-            </label> 
-          </div>      
-        </div>
-        <div class="row">
-          <div class="large-3 columns">
-              <button class="radius button" type="submit" id="submit">Add Item</button>
-          </div>
-          <div class="large-9 columns"></div>
-        </div>
-      <form>
-     <a class="close-reveal-modal">&#215;</a>
     </div>
     <div class="row"></div>
       <script src="js/vendor/jquery.js"></script>
