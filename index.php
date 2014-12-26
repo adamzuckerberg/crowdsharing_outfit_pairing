@@ -6,7 +6,7 @@ require("inc/config.php");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tradesy | Outfits</title>
+    <title>PearSorbet | Crowdsourced Clothes Pairing </title>
     <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -17,7 +17,7 @@ require("inc/config.php");
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1 id="tradesy">TRADESY</h1>
+          <h1 id="tradesy">PEAR SORBET</h1>
         </li>
       </ul>
     </nav>
@@ -51,7 +51,7 @@ require("inc/config.php");
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="button" id="clear-all-items-from-bag">CLEAR ITEMS</div>
+          <div class="tiny button alert" id="clear-all-items-from-bag">DELETE MATCHED ITEMS</div>
       </div>
       <div class="show-for-medium-up medium-4 large-4 columns">
         <div class="button success" id="show-all-items-in-bag">SHOW ITEMS</div>
@@ -107,8 +107,13 @@ require("inc/config.php");
         </div>
         <div class="row">
           <div class="large-6 columns">
-            <label>PRICE
-              <input type="text" />
+            <label>YOUR PRICE
+              <input type="text" placeholder="sale price" />
+            </label> 
+          </div>
+          <div class="large-6 columns">
+            <label>RETAIL PRICE
+              <input type="text" placeholder="retail price"/>
             </label> 
           </div>      
         </div>

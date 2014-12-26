@@ -1,3 +1,7 @@
+.ui-page, .ui-body-c, .ui-page-active, .ui-overlay-c, .ui-mobile-viewport
+{
+background: transparent !important;
+}
 h1#tradesy {
 font-family: "proxima-nova-bold",Helvetica,Arial,sans-serif;
 letter-spacing: 3px;
