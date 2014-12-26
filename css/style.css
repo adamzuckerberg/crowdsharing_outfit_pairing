@@ -47,6 +47,7 @@ font-size: 0.9em;
 }
 .item-to-match-section, .tradesy-personal-shopper-tool-section, .border {
 vertical-align: bottom;
+text-align: center;
 }
 .tradesy-personal-shopper-tool-section div {
 height: 370px;
@@ -212,7 +213,9 @@ max-width: 200px;
 #show-all-items-in-bag {
 max-width: 200px;
 }
-
+.active {
+border: 2px solid green;
+}
 /*******************************************
 media queries
 *******************************************/

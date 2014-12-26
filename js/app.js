@@ -141,5 +141,21 @@ $(document).ready(function() {
       window.location.reload();
     });
 
+//user is able to select and delete item from the screen using BACKSPSACE or DELETE
+$(".recommended").click(function(){
+    $(".recommended").not(this).removeClass("active");
+    $(this).toggleClass("active");
+});
+
+$(document.body).keyup(function(event){
+    if (event.keyCode == 46 || event.keyCode == 8) {
+        event.preventDefault();
+        $(".active").remove();
+    }
+});
+
+
+
+
 
 }); //close document.ready
