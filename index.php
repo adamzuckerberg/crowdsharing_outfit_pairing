@@ -23,10 +23,11 @@ require("inc/config.php");
     </nav>
     <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
     <div class=row>
-      <div class="small-5 medium-5 large-5 columns item-to-match-section">
+      <div class="small-5 medium-5 large-5 columns item-to-match-section item-to-match-container border">
         <h4 class="show-for-medium-up">Item to Match</h4>
         <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
         <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
+        <div class="button" id="">ADD ITEM</div>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Personal-Shopper Tool: Does This Item Match?</h4>

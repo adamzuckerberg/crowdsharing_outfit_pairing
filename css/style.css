@@ -14,6 +14,15 @@ letter-spacing: 2px;
 font-weight: 500;
 color: #B6B7BD;
 }
+.border {
+border: 2px solid red;
+}
+.item-to-match-container {
+text-align: center;
+}
+#add-item-button {
+color: !important #FFF;
+}
 .tagline-match {
 color: #B6B7BD;
 }
