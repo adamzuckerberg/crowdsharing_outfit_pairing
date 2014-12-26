@@ -27,7 +27,7 @@ require("inc/config.php");
         <h4 class="show-for-medium-up">Item to Match</h4>
         <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
         <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
-        <a href="#" data-reveal-id="add-item-modal" class="radius button">ADD ITEM</a>
+        <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius button">ADD ITEM</a>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up">Does This Item Match?</h4>
@@ -80,28 +80,54 @@ require("inc/config.php");
       </div>
     </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
-      <h2>This is a modal.</h2>
-      <p>Reveal makes these very easy to summon and dismiss. The close button is simply an anchor with a unicode character icon and a class of <code>close-reveal-modal</code>. Clicking anywhere outside the modal will also dismiss it.</p>
-      <p>Finally, if your modal summons another Reveal modal, the plugin will handle that for you gracefully.</p>
-      <p><a href="#" data-reveal-id="secondModal" class="secondary button">Second Modal...</a></p>
-      <a class="close-reveal-modal">&#215;</a>
-    </div>
-<!--     <div id="dialog-form" title="Create new user">
-      <p class="validateTips">All form fields are required.</p>
+      <h2>Add a New Item</h2>
       <form>
-        <fieldset>
-          <label for="name">Name</label>
-          <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
-          <label for="email">Email</label>
-          <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
-          <label for="password">Password</label>
-          <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
-      -->
-          <!-- Allow form submission with keyboard without duplicating the dialog button -->
-<!--           <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
-        </fieldset>
-      </form>
-    </div> -->
+        <div class="row">
+          <div class="large-12 columns">
+            <label>NAME
+              <input type="text" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">
+            <label>COLOR
+              <input type="text"/>
+            </label>
+          </div>
+          <div class="large-6 columns">
+            <label>CONDITION
+              <select>
+                <option value="husker">New</option>
+                <option value="starbuck">Like New</option>
+                <option value="hotdog">Gently Used</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-6 columns">
+            <label>PRICE
+              <input type="text" />
+            </label> 
+          </div>      
+        </div>
+        <div class="row">
+          <div class="large-6 columns">
+            <label>UPLOAD PHOTO
+                <input type="file" id="file" accept="image/*" name="file" multiple value="Add photos" disabled onchange="showThumbnails()"/>
+            </label> 
+          </div>      
+        </div>
+        <div class="row">
+          <div class="large-3 columns">
+              <button class="radius button" type="submit" id="submit">Add Item</button>
+          </div>
+          <div class="large-9 columns"></div>
+        </div>
+      <form>
+     <a class="close-reveal-modal">&#215;</a>
+    </div>
     <div class="row"></div>
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
