@@ -33,6 +33,7 @@ $(document).ready(function() {
             $('#item-to-rate img').attr('src',data.image);
             $('#item-to-rate').addClass('reset-after-rotate-right');
             $('.status').remove();
+            $('#recommended-items').show(); 
             },1200);
           })        
           .done(function() {
@@ -55,7 +56,7 @@ $(document).ready(function() {
               ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
               ajaxHTML += '</div>';
             }
-            ajaxHTML += '';
+            $('#clear-all-items-from-bag').show();
             $('#ajax-items')[0].innerHTML = ajaxHTML;
             // $('#ajax-items').html(ajaxHTML);
          })     
@@ -88,6 +89,7 @@ $(document).ready(function() {
             $('#item-to-rate img').attr('src',data.image);
             $('#item-to-rate').addClass('reset-after-rotate-right');
             $('.status').remove();
+            $('#recommended-items').show(); 
             },1200);
           })        
           .done(function() {
@@ -111,6 +113,7 @@ $(document).ready(function() {
             ajaxHTML += '</div>';
           }
           ajaxHTML += '';
+          $('#clear-all-items-from-bag').show();
           $('#ajax-items')[0].innerHTML = ajaxHTML;
           // $('#ajax-items').html(ajaxHTML);
        })     
@@ -183,6 +186,7 @@ $(document).ready(function() {
       $.post( "ajax/destroy-items.php", function()  {
         console.log('success - url');
         $('#recommended-items').empty();
+        $('#recommended-items').show();       
       })
         .done(function() {
         console.log('success - empty cart');
@@ -247,7 +251,6 @@ $(document).ready(function() {
     $("#new-item-submit").unbind(); 
     $("#new-item-submit").submit(); //Submit the form
     });
-
 
 
 }); //close document.ready

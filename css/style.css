@@ -234,6 +234,7 @@ padding: 10px;
 #clear-all-items-from-bag {
 max-width: 200px;
 text-align: center;
+display:none;
 }
 #show-all-items-in-bag {
 max-width: 200px;

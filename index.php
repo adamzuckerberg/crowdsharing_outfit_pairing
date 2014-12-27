@@ -6,7 +6,7 @@ require("inc/config.php");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PearSorbet | Crowdsourced Clothes Pairing </title>
+    <title>PearSorbet | CrowdPaired Styles </title>
     <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -59,7 +59,7 @@ require("inc/config.php");
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
           <div class="small button alert" id="clear-all-items-from-bag">EMPTY BAG</div>
-      </div>
+<!--       </div> -->
 <!--       <div class="show-for-medium-up medium-4 large-4 columns">
         <div class="small button success" id="show-all-items-in-bag">SHOW ITEMS</div>
       </div>  -->   
