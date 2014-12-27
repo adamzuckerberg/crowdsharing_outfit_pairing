@@ -121,6 +121,7 @@ require("inc/config.php");
       <script src="js/foundation.min.js"></script>
       <script src="js/app.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+      <script src="js/ajaxupload.min.js" type="text/javascript"></script>
       <script>
         $(document).foundation();
       </script>
