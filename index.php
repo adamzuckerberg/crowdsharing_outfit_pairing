@@ -23,14 +23,16 @@ require("inc/config.php");
     </nav>
     <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
     <div class=row>
-      <div class="small-5 medium-5 large-5 columns item-to-match-section item-to-match-container border">
-        <h4 class="show-for-medium-up">Item to Match</h4>
-        <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy">
-        <p class="show-for-medium-up">Brooks Brothers Double Breasted Pea Coat</p>
+      <div class="small-5 medium-5 large-5 columns item-to-match-section item-to-match-container border" id="primary-item">
+        <h4 class="show-for-medium-up item-to-match-headline">Item to Match</h4>
+        <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
+        <p class="show-for-medium-up primary-item-name">Brooks Brothers Double Breasted Pea Coat</p>
+        <p class="show-for-medium-up primary-item-price">$175.50</p>
+        <span class="show-for-medium-up primary-item-condition">New</span>
         <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
-        <h4 class="show-for-medium-up">Does This Item Match?</h4>
+        <h4 class="show-for-medium-up item-to-match-headline">Does This Item Match?</h4>
           <div id="girl-with-tongue" class="small-3 medium-3 large-3 columns border">
             <img src="images/unlike-woman.jpg" alt="Professional Woman with Tongue Out">
             <h5 id="hells-no">Hells No!</h5>
@@ -49,40 +51,40 @@ require("inc/config.php");
     </div>
     <h2 class="show-for-medium-up personal-shopper-headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
+    <div class="row" id="recommended-items">
+      <div class="small-12 medium-12 large-12 columns border">
+        <div class="row show-for-medium-up" id="ajax-items">
+        </div>
+      </div>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="small button alert" id="clear-all-items-from-bag">DELETE ALL</div>
+          <div class="small button alert" id="clear-all-items-from-bag">EMPTY BAG</div>
       </div>
-      <div class="show-for-medium-up medium-4 large-4 columns">
+<!--       <div class="show-for-medium-up medium-4 large-4 columns">
         <div class="small button success" id="show-all-items-in-bag">SHOW ITEMS</div>
-      </div>    
+      </div>  -->   
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
-    <div class="row" id="recommended-items">
-      <div class="small-12 medium-12 large-12 columns border show-for-medium-up" id="ajax-items">
-<!--         <div class="row show-for-medium-up" id="ajax-items">
-        </div> -->
-      </div>
     </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
-      <form>
+      <form name="multiform" id="new-item-form" action="" method="POST">
         <div class="row">
           <div class="large-12 columns">
             <label>NAME
-              <input type="text" />
+              <input type="text" name="primary_name"/>
             </label>
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns">
             <label>COLOR
-              <input type="text"/>
+              <input type="text" name="primary_color"/>
             </label>
           </div>
           <div class="large-6 columns">
             <label>CONDITION
-              <select>
+              <select name="primary_used">
                 <option value="husker">New</option>
                 <option value="starbuck">Like New</option>
                 <option value="hotdog">Gently Used</option>
@@ -93,25 +95,21 @@ require("inc/config.php");
         <div class="row">
           <div class="large-6 columns">
             <label>SELLING PRICE
-              <input type="text" placeholder="0.00" />
+              <input type="text" placeholder="0.00" name="primary_price" />
             </label> 
           </div>
           <div class="large-6 columns">
-            <label>RETAIL PRICE (optional)
-              <input type="text" placeholder="0.00"/>
-            </label> 
           </div>      
         </div>
         <div class="row">
           <div class="large-6 columns">
             <label>UPLOAD PHOTO
-                <input type="file" id="file" accept="image/*" name="file" multiple value="Add photos" disabled onchange="showThumbnails()"/>
             </label> 
           </div>      
         </div>
         <div class="row">
           <div class="large-3 columns">
-              <button class="radius button" type="submit" id="submit">Add Item</button>
+              <button class="radius button" type="submit" id="new-item-submit">Add Item</button>
           </div>
           <div class="large-9 columns"></div>
         </div>

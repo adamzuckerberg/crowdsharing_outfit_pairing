@@ -9,6 +9,10 @@ $(document).ready(function() {
       $('#hells-no').show(); });  
       $('#girl-with-tongue').mouseout(function(){
       $('#hells-no').hide();});  
+
+      $('.recommended-item-with-image').mouseover(function() {
+        alert('fhsdfa');
+      });
     
 //swipe right towards CEO to match item
       $("#item-to-rate").on("swiperight",function(){
@@ -37,7 +41,32 @@ $(document).ready(function() {
           .fail(function() {
           console.log('ajax error');
           })
-      });  
+
+        //show all matched items
+         $.get('ajax/show-items.php',
+          function(matches){ 
+            var ajaxHTML = '';
+            for (var i=0; i<matches.length; i+=1) {
+              ajaxHTML += '<div class="recommended-item-with-button">';
+              ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
+              ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
+              ajaxHTML += '<p class="item-price attributes">$'+matches[i].price+'</p>';
+              ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
+              ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
+              ajaxHTML += '</div>';
+            }
+            ajaxHTML += '';
+            $('#ajax-items')[0].innerHTML = ajaxHTML;
+            // $('#ajax-items').html(ajaxHTML);
+         })     
+          .done(function() {
+          console.log('success - item matched');
+          })     
+          .fail(function() {
+          console.log('ajax error');
+          })
+
+      }); //end swipe right on CEO
 
 //click right on CEO to match item
     $('#tracy-dinunzio').click(function(){
@@ -68,10 +97,10 @@ $(document).ready(function() {
           console.log('ajax error');
           })
 
-//show all matched items
+      //show all matched items
        $.get('ajax/show-items.php',
         function(matches){ 
-          var ajaxHTML = '<div class="small-4 medium-4 large-4 columns border recommended">';
+          var ajaxHTML = '';
           for (var i=0; i<matches.length; i+=1) {
             ajaxHTML += '<div class="recommended-item-with-button">';
             ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
@@ -81,7 +110,7 @@ $(document).ready(function() {
             ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
             ajaxHTML += '</div>';
           }
-          ajaxHTML += '</div>';
+          ajaxHTML += '';
           $('#ajax-items')[0].innerHTML = ajaxHTML;
           // $('#ajax-items').html(ajaxHTML);
        })     
@@ -163,15 +192,11 @@ $(document).ready(function() {
         })
     });
 
-   $('#show-all-items-in-bag').click(function(){
-      window.location.reload();
-    });
-
     //user is able to select and delete item from the screen using BACKSPSACE or DELETE
-    $('.recommended').click(function(){
-        $('.recommended').not(this).removeClass('active');
-        $(this).toggleClass('active');
-    });
+    // $('.recommended-item-with-image').click(function(){
+    //     $('.recommended-item-with-button').not(this).removeClass('active');
+    //     $(this).toggleClass('active');
+    // });
 
     $(document.body).keyup(function(event){
         if (event.keyCode == 46 || event.keyCode == 8) {
@@ -181,6 +206,47 @@ $(document).ready(function() {
     });
 
 
+//update primary item on valid for submission
+    // var primary = $('#primary-item img').data('primary');
+    // var name = $('#primary-item img').data('primary');;
+    // var color =;
+    // var image =;
+    // var used =;
+
+    $('#new-item-submit').submit(function() {
+    //    $.post('ajax/new-item.php',{primary_id: primary}, 
+    //       function(data){
+    //         console.log(data);
+    //         $('#primary-item img').data('id',data.primary_id);
+    //         $('#item-to-rate img').attr('src',data.image);
+    //       })        
+    //       .done(function() {
+    //       console.log('success - item matched');
+    //       })     
+    //       .fail(function() {
+    //       console.log('ajax error');
+    //       })
+
+    var formObj = $(this);
+    var formData = new FormData(this);
+    $.ajax({
+        url: 'ajax/new-item.php',
+        type: 'POST',
+        data:  formData,
+        mimeType:"multipart/form-data",
+        contentType: false,
+        cache: false,
+        processData:false,
+        success: function() {
+
+        },
+        error: function() {
+        }          
+    });
+    $("#new-item-submit").preventDefault(); //Prevent Default action. 
+    $("#new-item-submit").unbind(); 
+    $("#new-item-submit").submit(); //Submit the form
+    });
 
 
 
