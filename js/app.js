@@ -70,18 +70,20 @@ $(document).ready(function() {
 
 //show all matched items
        $.get('ajax/show-items.php',
-        function(matches){               
+        function(matches){ 
+          var ajaxHTML = '<div class="small-4 medium-4 large-4 columns border recommended">';
           for (var i=0; i<matches.length; i+=1) {
-            $('.recommended-item-image').attr('src','images/matches/'+matches[i].image);
-            $('.item-name').html(matches[i].name);
-            $('.item-price').html('$'+matches[i].price);
-            $('.item-used').html(matches[i].used);
-            console.log(matches[i].name); 
-            console.log(matches[i].price); 
-            console.log(matches[i].used);
-            console.log(matches[i].image);
-            console.log(matches[i].id);                     
+            ajaxHTML += '<div class="recommended-item-with-button">';
+            ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
+            ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
+            ajaxHTML += '<p class="item-price attributes">$'+matches[i].price+'</p>';
+            ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
+            ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
+            ajaxHTML += '</div>';
           }
+          ajaxHTML += '</div>';
+          $('#ajax-items')[0].innerHTML = ajaxHTML;
+          // $('#ajax-items').html(ajaxHTML);
        })     
         .done(function() {
         console.log('success - item matched');

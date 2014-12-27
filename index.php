@@ -59,18 +59,9 @@ require("inc/config.php");
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
     <div class="row" id="recommended-items">
-      <div class="small-12 medium-12 large-12 columns border">
-        <div class="row show-for-medium-up">
-          <div class="small-4 medium-4 large-4 columns border recommended"> 
-            <div class="recommended-item-with-button">
-              <img class="recommended-item-image" src="" alt=""> 
-              <a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a> 
-            </div>       
-            <p class="item-name attributes"></p>
-            <p class="item-price attributes"></p>
-            <p class="item-used attributes"></p>
-          </div>
-        </div>
+      <div class="small-12 medium-12 large-12 columns border show-for-medium-up" id="ajax-items">
+<!--         <div class="row show-for-medium-up" id="ajax-items">
+        </div> -->
       </div>
     </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
