@@ -1,9 +1,9 @@
 <?php
 require(__dir__."/../inc/config.php");
 
-$primary_item_id = intval($_POST['item_id']); 
+$primary_item_id = intval($_POST['primary_item_id']); 
 
-// $count = $connection->query("SELECT COUNT(id) FROM items");
+// $count = $connection->query("SELECT COUNT(name) FROM items");
 // 		if ($primary_item_id == $count) {
 // 			$primary_item_id = 0;
 // 		}
@@ -18,6 +18,6 @@ try {
 
 $array_new_item = $new_item->fetch(PDO::FETCH_ASSOC);
 header("Content-Type: application/json");
-echo json_encode(array('item_id'=>intval($array_new_item['id']),'item_name'=>$array_new_item['name'],'item_condition'=>$array_new_item['used'],'item_price'=>$array_new_item['price'],'image'=>'images/items/'.$array_new_item['image']));
+echo json_encode(array('primary_item_id'=>intval($array_new_item['id']),'item_name'=>$array_new_item['name'],'item_condition'=>$array_new_item['used'],'item_price'=>number_format((float)$array_new_item['price'], 2, '.', ''),'image'=>'images/items/'.$array_new_item['image']));
 
 ?> 

@@ -23,13 +23,14 @@ $(document).ready(function() {
       $(this).append('<div class="status like">Love It!</div>');      
 
       var item = $('#item-to-rate img').data('id');
+      var primaryId = $('#primary-item-image').data('primary');
 
-       $.post('ajax/match-item.php',{item_id: item}, 
+       $.post('ajax/match-item.php',{match_item_id: item, primary_item_id: primaryId}, 
           function(data){
             console.log(data);
             setTimeout(function(){
             $('#tracy-dinunzio').show();     
-            $('#item-to-rate img').data('id',data.item_id);
+            $('#item-to-rate img').data('id',data.match_item_id);
             $('#item-to-rate img').attr('src',data.image);
             $('#item-to-rate').addClass('reset-after-rotate-right');
             $('.status').remove();
@@ -78,14 +79,15 @@ $(document).ready(function() {
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
       var item = $('#item-to-rate img').data('id');
+      var primaryId = $('#primary-item-image').data('primary');
 
 //reveal new match item
-       $.post('ajax/match-item.php',{item_id: item}, 
+       $.post('ajax/match-item.php',{match_item_id: item, primary_item_id: primaryId}, 
           function(data){
             console.log(data);
             setTimeout(function(){
             $('#tracy-dinunzio').show();     
-            $('#item-to-rate img').data('id',data.item_id);
+            $('#item-to-rate img').data('id',data.match_item_id);
             $('#item-to-rate img').attr('src',data.image);
             $('#item-to-rate').addClass('reset-after-rotate-right');
             $('.status').remove();
@@ -251,11 +253,11 @@ $(document).ready(function() {
       var primaryId = $('#primary-item-image').data('primary');
 
 //reveal new match item
-       $.post('ajax/show-new-primary-item.php',{item_id: primaryId}, 
+       $.post('ajax/show-new-primary-item.php',{primary_item_id: primaryId}, 
           function(data){
             console.log(data);
             setTimeout(function(){   
-            $('#primary-item-image').data('primary',data.item_id);
+            $('#primary-item-image').data('primary',data.primary_item_id);
             $('#primary-item-image').attr('src',data.image);
             $('.primary-item-name').html(data.item_name);
             $('.primary-item-price').html('$'+data.item_price);

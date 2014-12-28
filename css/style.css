@@ -99,7 +99,7 @@ border-radius: 20px;
 transition-duration: .5s;	
 }
 #primary-item img:hover {
-padding: 6px;
+padding: 8px;
 border: 2px solid black;
 transition-scale: 1.3;
 }
