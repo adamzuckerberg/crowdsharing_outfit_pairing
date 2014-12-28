@@ -65,7 +65,7 @@ require("inc/config.php");
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
       <div id="form-messages"></div>
-      <form name="" id="ajax-form-new-item" method="post" action="ajax/new-item.php">
+      <form name="" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
         <div class="row">
           <div class="large-12 columns">
             <label>NAME
