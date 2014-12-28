@@ -28,7 +28,7 @@ require("inc/config.php");
         <img id="primary-item-image" src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
         <p class="show-for-medium-up primary-item-name">Brooks Brothers Double Breasted Pea Coat</p>
         <p class="show-for-medium-up primary-item-price">$175.50</p>
-        <span class="show-for-medium-up primary-item-condition">New</span>
+        <p class="show-for-medium-up primary-item-condition">New</p>
         <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">

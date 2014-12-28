@@ -245,8 +245,8 @@ $(document).ready(function() {
 
 //click primary item to reveal next item
     $('#primary-item-image').click(function(){
-      $("#primary-item-image").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
-      $("#primary-item-image").addClass('rotate-right');     
+      $("#primary-item-image").removeClass('reset-after-rotate-left-primary-item rotate-left-primary-item');
+      $("#primary-item-image").addClass('rotate-left-primary-item');     
 
       var primaryId = $('#primary-item-image').data('primary');
 
@@ -257,8 +257,11 @@ $(document).ready(function() {
             setTimeout(function(){   
             $('#primary-item-image').data('primary',data.item_id);
             $('#primary-item-image').attr('src',data.image);
-            $('#primary-item-image').addClass('reset-after-rotate-right');
-            },1200);
+            $('.primary-item-name').html(data.item_name);
+            $('.primary-item-price').html('$'+data.item_price);
+            $('.primary-item-condition').html(data.item_condition);
+            $('#primary-item-image').addClass('reset-after-rotate-left-primary-item');
+            },500);
           })        
           .done(function() {
           console.log('success - item matched');
