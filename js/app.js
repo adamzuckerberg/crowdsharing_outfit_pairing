@@ -210,47 +210,37 @@ $(document).ready(function() {
     });
 
 
-//update primary item on valid for submission
-    // var primary = $('#primary-item img').data('primary');
-    // var name = $('#primary-item img').data('primary');;
-    // var color =;
-    // var image =;
-    // var used =;
+    var form = $('#ajax-form-new-item');
+    var formMessages = $('#form-messages');
 
-    $('#new-item-submit').submit(function() {
-    //    $.post('ajax/new-item.php',{primary_id: primary}, 
-    //       function(data){
-    //         console.log(data);
-    //         $('#primary-item img').data('id',data.primary_id);
-    //         $('#item-to-rate img').attr('src',data.image);
-    //       })        
-    //       .done(function() {
-    //       console.log('success - item matched');
-    //       })     
-    //       .fail(function() {
-    //       console.log('ajax error');
-    //       })
+    $('#ajax-form-new-item').submit( function(event){
+      event.preventDefault();
+      var formData = $(form).serialize();
 
-    var formObj = $(this);
-    var formData = new FormData(this);
-    $.ajax({
-        url: 'ajax/new-item.php',
+      $.ajax({
         type: 'POST',
-        data:  formData,
-        mimeType:"multipart/form-data",
-        contentType: false,
-        cache: false,
-        processData:false,
-        success: function() {
-
-        },
-        error: function() {
-        }          
-    });
-    $("#new-item-submit").preventDefault(); //Prevent Default action. 
-    $("#new-item-submit").unbind(); 
-    $("#new-item-submit").submit(); //Submit the form
-    });
+        url: 'ajax/new-item.php', 
+        data: formData
+      })
+      .done(function(response) {
+      $(formMessages).removeClass('error');
+      $(formMessages).addClass('success');
+      $(formMessages).text(response);
+      $('#primary_name').val('');
+      $('#primary_price').val('');
+      $('#primary_color').val('');
+      $('#primary_condition').val('');
+      })
+      .fail(function(data) {
+      $(formMessages).removeClass('success');
+      $(formMessages).addClass('error');
+      if (data.responseText !== '') {
+          $(formMessages).text(data.responseText);
+      } else {
+          $(formMessages).text('Oops! An error occured and your message could not be sent.');
+          }
+        }); 
+      });
 
 
 }); //close document.ready

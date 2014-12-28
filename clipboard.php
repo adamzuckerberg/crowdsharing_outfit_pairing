@@ -5,11 +5,11 @@
         while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
         ?> -->
         <div class="row show-for-medium-up">
-          <div class="small-4 medium-4 large-4 columns border recommended"> 
+          <div class="small-4 medium-4 large-4 columns border recommended" id="matched-items-html-ajax"> 
             <div class="recommended-item-with-button">
              <!--  <img class="recommended-item-image" src="" alt=""> --> 
 <!--               <img class="recommended-item-image" src="images/matches/<?php echo $row['image']; ?>" alt="<?php echo $row['name']; ?>"> 
- -->     <!--          <a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>  -->
+ -->              <a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a> 
             </div>  
 <!--             <p class="item-name attributes"></p>  -->         
 <!--             <p class="item-name attributes"><?php echo $row['name']; ?></p>

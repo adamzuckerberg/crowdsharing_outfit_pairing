@@ -68,23 +68,29 @@ require("inc/config.php");
     </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
-      <form name="multiform" id="new-item-form" action="" method="POST">
+      <div id="form-messages"></div>
+      <form name="" id="ajax-form-new-item" method="post" action="ajax/new-item.php">
         <div class="row">
           <div class="large-12 columns">
             <label>NAME
-              <input type="text" name="primary_name"/>
+              <input type="text" name="primary_name" id="primary_name" required/>
             </label>
           </div>
         </div>
         <div class="row">
-          <div class="large-6 columns">
+          <div class="large-4 columns">
             <label>COLOR
-              <input type="text" name="primary_color"/>
+              <input type="text" name="primary_color" id="primary_color" required/>
             </label>
           </div>
-          <div class="large-6 columns">
+          <div class="large-4 columns">
+            <label>SELLING PRICE
+              <input type="text" placeholder="0.00" name="primary_price" id="primary_price" required/>
+            </label> 
+          </div>
+          <div class="large-4 columns">
             <label>CONDITION
-              <select name="primary_used">
+              <select name="primary_condition" id="primary_condition" required>
                 <option value="husker">New</option>
                 <option value="starbuck">Like New</option>
                 <option value="hotdog">Gently Used</option>
@@ -92,21 +98,14 @@ require("inc/config.php");
             </label>
           </div>
         </div>
-        <div class="row">
-          <div class="large-6 columns">
-            <label>SELLING PRICE
-              <input type="text" placeholder="0.00" name="primary_price" />
-            </label> 
-          </div>
-          <div class="large-6 columns">
-          </div>      
-        </div>
-        <div class="row">
+<!--         <div class="row">
           <div class="large-6 columns">
             <label>UPLOAD PHOTO
+              <input type="file" id="file-select" name="photos[]" />
+              <button type="tiny button" id="upload-button">Upload</button>
             </label> 
           </div>      
-        </div>
+        </div> -->
         <div class="row">
           <div class="large-3 columns">
               <button class="radius button" type="submit" id="new-item-submit">Add Item</button>
