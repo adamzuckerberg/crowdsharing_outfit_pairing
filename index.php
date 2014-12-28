@@ -58,11 +58,7 @@ require("inc/config.php");
       </div>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-          <div class="small button alert" id="clear-all-items-from-bag">EMPTY BAG</div>
-<!--       </div> -->
-<!--       <div class="show-for-medium-up medium-4 large-4 columns">
-        <div class="small button success" id="show-all-items-in-bag">SHOW ITEMS</div>
-      </div>  -->   
+        <div class="small button alert" id="clear-all-items-from-bag">EMPTY BAG</div>
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
     </div>
@@ -91,21 +87,21 @@ require("inc/config.php");
           <div class="large-4 columns">
             <label>CONDITION
               <select name="primary_condition" id="primary_condition" required>
-                <option value="husker">New</option>
-                <option value="starbuck">Like New</option>
-                <option value="hotdog">Gently Used</option>
+                <option value="New">New</option>
+                <option value="Like New">Like New</option>
+                <option value="Gently Used">Gently Used</option>
               </select>
             </label>
           </div>
         </div>
-<!--         <div class="row">
+        <div class="row">
           <div class="large-6 columns">
-            <label>UPLOAD PHOTO
-              <input type="file" id="file-select" name="photos[]" />
-              <button type="tiny button" id="upload-button">Upload</button>
-            </label> 
+<!--             <label>UPLOAD PHOTO
+              <input type="file" name="primary_image" id="primary_image" />
+              <div class="tiny success radius button" id="upload-button">Upload</div>
+            </label>  -->
           </div>      
-        </div> -->
+        </div>
         <div class="row">
           <div class="large-3 columns">
               <button class="radius button" type="submit" id="new-item-submit">Add Item</button>

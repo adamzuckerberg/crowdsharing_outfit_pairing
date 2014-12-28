@@ -232,6 +232,8 @@ $(document).ready(function() {
       $('#primary_price').val('');
       $('#primary_color').val('');
       $('#primary_condition').val('');
+      $('#primary_image').val(''); 
+      $('#add-item-modal').dialog('close');    
       })
       .fail(function(data) {
       $(formMessages).removeClass('success');
@@ -242,7 +244,6 @@ $(document).ready(function() {
           $(formMessages).text('Oops! An error occured and your message could not be sent.');
           }
         }); 
-     $('#add-item-modal').dialog('close');
       });
 
 //click primary item to reveal next item

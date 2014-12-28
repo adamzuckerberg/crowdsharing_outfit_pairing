@@ -5,6 +5,7 @@ $primary_name = $_POST['primary_name'];
 $primary_price = $_POST['primary_price'];
 $primary_color = $_POST['primary_color'];
 $primary_used = $_POST['primary_condition'];
+$primary_image = $_POST['primary_image'];
 
 try {
 	$results = $connection->prepare("INSERT INTO items (name,price,color,used) VALUES (?,?,?,?)");
