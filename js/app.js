@@ -240,7 +240,33 @@ $(document).ready(function() {
           $(formMessages).text('Oops! An error occured and your message could not be sent.');
           }
         }); 
+     $('#add-item-modal').dialog('close');
       });
 
+//click primary item to reveal next item
+    $('#primary-item-image').click(function(){
+      $("#primary-item-image").removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
+      $("#primary-item-image").addClass('rotate-right');     
+
+      var primaryId = $('#primary-item-image').data('primary');
+
+//reveal new match item
+       $.post('ajax/show-new-primary-item.php',{item_id: primaryId}, 
+          function(data){
+            console.log(data);
+            setTimeout(function(){   
+            $('#primary-item-image').data('primary',data.item_id);
+            $('#primary-item-image').attr('src',data.image);
+            $('#primary-item-image').addClass('reset-after-rotate-right');
+            },1200);
+          })        
+          .done(function() {
+          console.log('success - item matched');
+          })     
+          .fail(function() {
+          console.log('ajax error');
+          })
+
+    }); //end click primary item
 
 }); //close document.ready

@@ -20,9 +20,6 @@ color: #B6B7BD;
 .border {
 /*border: 2px solid red;*/
 }
-.item-to-match-container {
-text-align: center;
-}
 #add-item-button {
 color: !important #FFF;
 }
@@ -89,12 +86,23 @@ z-index: 100;
 border-radius: 30%;
 transition-duration: .7s;
 }
-#tracy-dinunzio img:hover  {
+#tracy-dinunzio img:hover {
 border: 3px solid green;
 border-radius: 40%;
 opacity: 0.9;
 transition-property: opacity, border-radius, border;
 transition-duration: .2s, .7s, .3s;
+}
+#primary-item img {
+padding: 10px;
+border-radius: 20px;
+opacity: 0.9;
+transition-duration: .5s;	
+}
+#primary-item img:hover {
+padding: 6px;
+border: 4px solid black;
+transition-scale: 1.3;
 }
 #girl-with-tongue {
 padding-top: 18%;

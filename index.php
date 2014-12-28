@@ -23,9 +23,9 @@ require("inc/config.php");
     </nav>
     <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
     <div class=row>
-      <div class="small-5 medium-5 large-5 columns item-to-match-section item-to-match-container border" id="primary-item">
+      <div class="small-5 medium-5 large-5 columns item-to-match-section border" id="primary-item">
         <h4 class="show-for-medium-up item-to-match-headline">Item to Match</h4>
-        <img src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
+        <img id="primary-item-image" src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
         <p class="show-for-medium-up primary-item-name">Brooks Brothers Double Breasted Pea Coat</p>
         <p class="show-for-medium-up primary-item-price">$175.50</p>
         <span class="show-for-medium-up primary-item-condition">New</span>
