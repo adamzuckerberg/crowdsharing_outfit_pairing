@@ -52,7 +52,7 @@ $(document).ready(function() {
               ajaxHTML += '<div class="recommended-item-with-button">';
               ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
               ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
-              ajaxHTML += '<p class="item-price attributes">$'+matches[i].price+'</p>';
+              ajaxHTML += '<p class="item-price attributes">$'+(matches[i].price).toFixed(2)+'</p>';
               ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
               ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
               ajaxHTML += '</div>';
@@ -78,10 +78,10 @@ $(document).ready(function() {
       $("#item-to-rate").find('.status').remove();
       $("#item-to-rate").append('<div class="status like">Love It!</div>');      
 
+      //reveal new match item
       var item = $('#item-to-rate img').data('id');
       var primaryId = $('#primary-item-image').data('primary');
 
-//reveal new match item
        $.post('ajax/match-item.php',{match_item_id: item, primary_item_id: primaryId}, 
           function(data){
             console.log(data);
@@ -233,7 +233,7 @@ $(document).ready(function() {
       $('#primary_color').val('');
       $('#primary_condition').val('');
       $('#primary_image').val(''); 
-
+      $('.reveal-modal').foundation('reveal', 'close');
       })
       .fail(function(data) {
       $(formMessages).removeClass('success');
@@ -244,7 +244,6 @@ $(document).ready(function() {
           $(formMessages).text('Oops! An error occured and your message could not be sent.');
           }
         }); 
-      $('.reveal-modal').foundation('reveal', 'close');
       });
 
 //click primary item to reveal next item

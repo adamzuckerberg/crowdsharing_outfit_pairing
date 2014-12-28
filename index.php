@@ -95,11 +95,10 @@ require("inc/config.php");
           </div>
         </div>
         <div class="row">
-          <div class="large-6 columns">
-<!--             <label>UPLOAD PHOTO
-              <input type="file" name="primary_image" id="primary_image" />
-              <div class="tiny success radius button" id="upload-button">Upload</div>
-            </label>  -->
+          <div class="large-6 columns upload-input">
+            <label>UPLOAD IMAGE
+              <input type="file" name="primary_image" id="primary_image" /><br>
+            </label> 
           </div>      
         </div>
         <div class="row">

@@ -4,9 +4,9 @@ require(__dir__."/../inc/config.php");
 $primary_item_id = intval($_POST['primary_item_id']); 
 
 // $count = $connection->query("SELECT COUNT(name) FROM items");
-// 		if ($primary_item_id == $count) {
-// 			$primary_item_id = 0;
-// 		}
+		if ($primary_item_id == 7) {
+			$primary_item_id = 0;
+		}
 
 try {
 	$new_item = $connection->query("SELECT id, name, price, used, image FROM items WHERE id = ".($primary_item_id+1)." LIMIT 1");

@@ -8,17 +8,19 @@ $primary_used = $_POST['primary_condition'];
 $primary_image = $_POST['primary_image'];
 
 try {
-	$results = $connection->prepare("INSERT INTO items (name,price,color,used) VALUES (?,?,?,?)");
+	$results = $connection->prepare("INSERT INTO items (name,price,color,used,image) VALUES (?,?,?,?,?)");
 	$results->bindParam(1,$primary_name);
 	$results->bindParam(2,$primary_price);
 	$results->bindParam(3,$primary_color);
 	$results->bindParam(4,$primary_used);
+	$results->bindParam(5,$primary_image);	
 	$results->execute();
 }  catch (Exception $e) {
 	echo "Data could not be inserted into database.";
    	echo "Failed: " . $e->getMessage();
 	exit;
 }
+
 
 // try {
 // 	$new_item = $connection->query("SELECT id, image FROM items WHERE id = ".$primary_id+1." LIMIT 1");
