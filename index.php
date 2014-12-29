@@ -25,7 +25,7 @@ require("inc/config.php");
     <div class=row>
       <div class="small-5 medium-5 large-5 columns item-to-match-section border" id="primary-item">
         <h4 class="show-for-medium-up item-to-match-headline">Item to Match</h4>
-        <img id="primary-item-image" src="images/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
+        <img id="primary-item-image" src="images/items/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
         <p class="show-for-medium-up primary-item-name">Brooks Brothers Double Breasted Pea Coat</p>
         <p class="show-for-medium-up primary-item-price">$175.50</p>
         <p class="show-for-medium-up primary-item-condition">New</p>
@@ -65,7 +65,7 @@ require("inc/config.php");
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
       <div id="form-messages"></div>
-      <form name="" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
+      <form name="ajax-form-new-item" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
         <div class="row">
           <div class="large-12 columns">
             <label>NAME
@@ -113,9 +113,9 @@ require("inc/config.php");
     <div class="row"></div>
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
-      <script src="js/app.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-      <script src="js/ajaxupload.min.js" type="text/javascript"></script>
+      <script src="js/jquery.form.min.js"></script>
+      <script src="js/app.js"></script>
       <script>
         $(document).foundation();
       </script>

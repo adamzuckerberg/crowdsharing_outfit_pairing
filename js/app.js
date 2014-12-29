@@ -184,9 +184,13 @@ $(document).ready(function() {
       })  
     });
 
+      var primaryId = $('#primary-item-image').data('primary');
+
    $('#clear-all-items-from-bag').click(function(){
-      $.post( "ajax/destroy-items.php", function()  {
-        console.log('success - url');
+      $.post( "ajax/destroy-items.php",{primary_item_id: primaryId}, 
+        function(data){
+        alert(data);
+        location.reload();
         $('#recommended-items').empty();
         $('#recommended-items').show();       
       })
@@ -211,40 +215,21 @@ $(document).ready(function() {
         }
     });
 
-
-    var form = $('#ajax-form-new-item');
-    var formMessages = $('#form-messages');
-
-    $('#ajax-form-new-item').submit( function(event){
-      event.preventDefault();
-      var formData = $(form).serialize();
-
-      $.ajax({
-        type: 'POST',
-        url: 'ajax/new-item.php', 
-        data: formData
-      })
-      .done(function(response) {
-      $(formMessages).removeClass('error');
-      $(formMessages).addClass('success');
-      $(formMessages).text(response);
-      $('#primary_name').val('');
-      $('#primary_price').val('');
-      $('#primary_color').val('');
-      $('#primary_condition').val('');
-      $('#primary_image').val(''); 
-      $('.reveal-modal').foundation('reveal', 'close');
-      })
-      .fail(function(data) {
-      $(formMessages).removeClass('success');
-      $(formMessages).addClass('error');
-      if (data.responseText !== '') {
-          $(formMessages).text(data.responseText);
-      } else {
-          $(formMessages).text('Oops! An error occured and your message could not be sent.');
+//submit form with image upload
+    $('#ajax-form-new-item').submit(function(){
+      $(this).ajaxSubmit({
+          success: function(data, statusText, xhr, $form) {
+            $('.reveal-modal').foundation('reveal', 'close');
+            $('#primary-item-image').data('primary',data.item_id);
+            $('#primary-item-image').attr('src',data.image);
+            $('.primary-item-name').html(data.item_name);
+            $('.primary-item-price').html('$'+data.item_price);
+            $('.primary-item-condition').html(data.item_condition);
+            $('#primary-item-image').addClass('reset-after-rotate-left-primary-item');
           }
-        }); 
       });
+      return false;
+    });
 
 //click primary item to reveal next item
     $('#primary-item-image').click(function(){
