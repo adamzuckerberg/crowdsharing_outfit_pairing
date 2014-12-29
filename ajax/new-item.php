@@ -2,17 +2,17 @@
 require(__dir__."/../inc/config.php");
 
 // Save the image
-	define('UPLOAD_DIR', '../images/items/');
-	$image = $_FILES['primary_image'];
-	error_log($image['tmp_name']);
+define('UPLOAD_DIR', '../images/items/');
+$image = $_FILES['primary_image'];
+if $image['type'] == "image/jpg" {
 	$fileName = uniqid() . '.jpg';
 	$file = UPLOAD_DIR . $fileName;
 	move_uploaded_file($image["tmp_name"], $file);
-	// $success = file_put_contents($file, $data);
-	// print $success ? $file : 'Unable to save the file.';
-	// echo JSON_encode(array('imageName'=>$fileName));
+} else {
+	echo "Please upload a .jpg";
+	return;
+}
 
-// Form post data
 $primary_name = $_POST['primary_name'];
 $primary_price = $_POST['primary_price'];
 $primary_color = $_POST['primary_color'];

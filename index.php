@@ -52,13 +52,14 @@ require("inc/config.php");
     <h2 class="show-for-medium-up personal-shopper-headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class="row" id="recommended-items">
+        <div class="small button show-for-medium-up" id="show-all-items-in-bag">SHOW ITEMS</div>
+        <div class="small button alert show-for-medium-up" id="clear-all-items-from-bag">EMPTY BAG</div>
       <div class="small-12 medium-12 large-12 columns border">
         <div class="row show-for-medium-up" id="ajax-items">
         </div>
       </div>
     <div class=row>
       <div class="show-for-medium-up medium-4 large-4 columns">
-        <div class="small button alert" id="clear-all-items-from-bag">EMPTY BAG</div>
       <div class="show-for-medium-up medium-4 large-4 columns"></div>
     </div>
     </div>
@@ -97,7 +98,7 @@ require("inc/config.php");
         <div class="row">
           <div class="large-6 columns upload-input">
             <label>UPLOAD IMAGE
-              <input type="file" name="primary_image" id="primary_image" /><br>
+              <input type="file" name="primary_image" id="primary_image" placeholder="image.jpg" /><br>
             </label> 
           </div>      
         </div>

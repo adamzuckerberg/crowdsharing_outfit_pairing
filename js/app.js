@@ -52,7 +52,7 @@ $(document).ready(function() {
               ajaxHTML += '<div class="recommended-item-with-button">';
               ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
               ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
-              ajaxHTML += '<p class="item-price attributes">$'+(matches[i].price).toFixed(2)+'</p>';
+              ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
               ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
               ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
               ajaxHTML += '</div>';
@@ -184,15 +184,13 @@ $(document).ready(function() {
       })  
     });
 
-      var primaryId = $('#primary-item-image').data('primary');
+
 
    $('#clear-all-items-from-bag').click(function(){
+      var primaryId = $('#primary-item-image').data('primary');
       $.post( "ajax/destroy-items.php",{primary_item_id: primaryId}, 
         function(data){
-        alert(data);
-        location.reload();
-        $('#recommended-items').empty();
-        $('#recommended-items').show();       
+        $('#ajax-items div').remove(); 
       })
         .done(function() {
         console.log('success - empty cart');
@@ -202,11 +200,11 @@ $(document).ready(function() {
         })
     });
 
-    //user is able to select and delete item from the screen using BACKSPSACE or DELETE
-    // $('.recommended-item-with-image').click(function(){
+    // user is able to select and delete item from the screen using BACKSPSACE or DELETE
+    // function delete_single_item() {
     //     $('.recommended-item-with-button').not(this).removeClass('active');
     //     $(this).toggleClass('active');
-    // });
+    // }
 
     $(document.body).keyup(function(event){
         if (event.keyCode == 46 || event.keyCode == 8) {
@@ -226,6 +224,8 @@ $(document).ready(function() {
             $('.primary-item-price').html('$'+data.item_price);
             $('.primary-item-condition').html(data.item_condition);
             $('#primary-item-image').addClass('reset-after-rotate-left-primary-item');
+          },
+          error: function() {
           }
       });
       return false;
@@ -237,7 +237,7 @@ $(document).ready(function() {
       $("#primary-item-image").addClass('rotate-left-primary-item');     
 
       var primaryId = $('#primary-item-image').data('primary');
-
+      console.log(primaryId);
 //reveal new match item
        $.post('ajax/show-new-primary-item.php',{primary_item_id: primaryId}, 
           function(data){
@@ -259,5 +259,37 @@ $(document).ready(function() {
           })
 
     }); //end click primary item
+
+    $('#show-all-items-in-bag').click( function() {
+          $('.recommended-item-with-button').remove();
+          var primaryId = $('#primary-item-image').data('primary');
+
+         $.post('ajax/show-items.php',{primary_item_id: primaryId},
+            function(matches){ 
+            console.log(matches);
+            var ajaxHTML = '';
+            for (var i=0; i<matches.length; i+=1) {
+              ajaxHTML += '<div class="recommended-item-with-button">';
+              ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
+              ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
+              ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
+              ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
+              ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
+              ajaxHTML += '</div>';
+            }
+            $('#clear-all-items-from-bag').show();
+            $('#ajax-items')[0].innerHTML = ajaxHTML;
+            // $('#ajax-items').html(ajaxHTML);
+         })     
+          .done(function() {
+          console.log('success - item matched');
+          })     
+          .fail(function() {
+          console.log('ajax error');
+          })
+
+    });
+
+
 
 }); //close document.ready

@@ -3,8 +3,8 @@ require(__dir__."/../inc/config.php");
 
 $primary_item_id = intval($_POST['primary_item_id']); 
 
-// $count = $connection->query("SELECT COUNT(name) FROM items");
-		if ($primary_item_id == 7) {
+$count = $connection->query("SELECT id FROM items ORDER BY id DESC LIMIT 1");
+		if ($primary_item_id >= $count->fetchColumn(0)) {
 			$primary_item_id = 0;
 		}
 

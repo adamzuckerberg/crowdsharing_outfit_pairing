@@ -1,13 +1,13 @@
 <?php
 require(__dir__."/../inc/config.php");
 
-$matches_id = intval($_POST['match_item_id']);
 $primary_id = intval($_POST['primary_item_id']);
+$matches_id = intval($_POST['match_item_id']);
 
 try {
 	$results = $connection->prepare("INSERT INTO items_matches (items_id,matches_id) VALUES (?,?)");
-	$results->bindParam(1,$matches_id);
-	$results->bindParam(2,$primary_id);
+	$results->bindParam(1,$primary_id);
+	$results->bindParam(2,$matches_id);
 	$results->execute();
 }  catch (Exception $e) {
 	echo "Data could not be inserted into database.";
