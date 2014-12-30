@@ -58,11 +58,6 @@ require("inc/config.php");
         <div class="row show-for-medium-up" id="ajax-items">
         </div>
       </div>
-    <div class=row>
-      <div class="show-for-medium-up medium-4 large-4 columns">
-      <div class="show-for-medium-up medium-4 large-4 columns"></div>
-    </div>
-    </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
       <div id="form-messages"></div>
