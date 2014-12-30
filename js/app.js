@@ -39,6 +39,7 @@ $(document).ready(function() {
           })        
           .done(function() {
           console.log('success - item matched');
+          show_all_items();
           })     
           .fail(function() {
           console.log('ajax error');
@@ -96,6 +97,7 @@ $(document).ready(function() {
           })        
           .done(function() {
           console.log('success - item matched');
+          show_all_items();
           })     
           .fail(function() {
           console.log('ajax error');
@@ -121,6 +123,7 @@ $(document).ready(function() {
        })     
         .done(function() {
         console.log('success - item matched');
+        show_all_items();
         })     
         .fail(function() {
         console.log('ajax error');
@@ -150,6 +153,7 @@ $(document).ready(function() {
       })
       .done(function() {
       console.log('success - new item selected');
+      show_all_items();
       })     
       .fail(function() {
       console.log('ajax error');
@@ -178,6 +182,7 @@ $(document).ready(function() {
       })
       .done(function() {
       console.log('success - new item selected');
+      show_all_items();
       })     
       .fail(function() {
       console.log('ajax error');
@@ -224,6 +229,7 @@ $(document).ready(function() {
             $('.primary-item-price').html('$'+data.item_price);
             $('.primary-item-condition').html(data.item_condition);
             $('#primary-item-image').addClass('reset-after-rotate-left-primary-item');
+            show_all_items();
           },
           error: function() {
           }
@@ -253,6 +259,7 @@ $(document).ready(function() {
           })        
           .done(function() {
           console.log('success - item matched');
+          show_all_items();
           })     
           .fail(function() {
           console.log('ajax error');
@@ -260,33 +267,63 @@ $(document).ready(function() {
 
     }); //end click primary item
 
-    $('#show-all-items-in-bag').click( function() {
-          $('.recommended-item-with-button').remove();
-          var primaryId = $('#primary-item-image').data('primary');
+  function show_all_items() {
+      $('.recommended-item-with-button').remove();
+       var primaryId = $('#primary-item-image').data('primary');
+       $.post('ajax/show-items.php',{primary_item_id: primaryId},
+          function(matches){ 
+          console.log(matches);
+          var ajaxHTML = '';
+          for (var i=0; i<matches.length; i+=1) {
+            ajaxHTML += '<div class="recommended-item-with-button">';
+            ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
+            ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
+            ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
+            ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
+            ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
+            ajaxHTML += '</div>';
+          }
+          $('#clear-all-items-from-bag').show();
+          $('#ajax-items')[0].innerHTML = ajaxHTML;
+          // $('#ajax-items').html(ajaxHTML);
+       })     
+        .done(function() {
+        console.log('success - item matched');
+        })     
+        .fail(function() {
+        console.log('ajax error');
+        })
+  }
 
-         $.post('ajax/show-items.php',{primary_item_id: primaryId},
-            function(matches){ 
-            console.log(matches);
-            var ajaxHTML = '';
-            for (var i=0; i<matches.length; i+=1) {
-              ajaxHTML += '<div class="recommended-item-with-button">';
-              ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
-              ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
-              ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
-              ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
-              ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
-              ajaxHTML += '</div>';
-            }
-            $('#clear-all-items-from-bag').show();
-            $('#ajax-items')[0].innerHTML = ajaxHTML;
-            // $('#ajax-items').html(ajaxHTML);
-         })     
-          .done(function() {
-          console.log('success - item matched');
-          })     
-          .fail(function() {
-          console.log('ajax error');
-          })
+    $('#show-all-items-in-bag').click( function() {
+        // var primaryId = $('#primary-item-image').data('primary');
+        show_all_items();
+         //  $('.recommended-item-with-button').remove();
+         //  var primaryId = $('#primary-item-image').data('primary');
+
+         // $.post('ajax/show-items.php',{primary_item_id: primaryId},
+         //    function(matches){ 
+         //    console.log(matches);
+         //    var ajaxHTML = '';
+         //    for (var i=0; i<matches.length; i+=1) {
+         //      ajaxHTML += '<div class="recommended-item-with-button">';
+         //      ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
+         //      ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
+         //      ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
+         //      ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
+         //      ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
+         //      ajaxHTML += '</div>';
+         //    }
+         //    $('#clear-all-items-from-bag').show();
+         //    $('#ajax-items')[0].innerHTML = ajaxHTML;
+         //    // $('#ajax-items').html(ajaxHTML);
+         // })     
+         //  .done(function() {
+         //  console.log('success - item matched');
+         //  })     
+         //  .fail(function() {
+         //  console.log('ajax error');
+         //  })
 
     });
 

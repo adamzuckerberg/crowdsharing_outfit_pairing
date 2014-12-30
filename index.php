@@ -24,12 +24,18 @@ require("inc/config.php");
     <h2 class="tagline show-for-medium-up">BECAUSE EVERYONE LOVES SHOPPING WITH A FRIEND</h2>
     <div class=row>
       <div class="small-5 medium-5 large-5 columns item-to-match-section border" id="primary-item">
-        <h4 class="show-for-medium-up item-to-match-headline">Item to Match</h4>
         <img id="primary-item-image" src="images/items/brooks-brothers-coat-navy-1147498.jpg" alt="Brooks Brothers Coat Navy" data-primary='1'>
         <p class="show-for-medium-up primary-item-name">Brooks Brothers Double Breasted Pea Coat</p>
         <p class="show-for-medium-up primary-item-price">$175.50</p>
         <p class="show-for-medium-up primary-item-condition">New</p>
-        <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
+        <div class="row">
+          <div class="small-6 medium-6 large-6 columns">
+            <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
+          </div>
+          <div class="small-6 medium-6 large-6 columns">
+            <a href="#" id="clear-all-items-from-bag" class="radius small button alert">DELETE OUTFIT</a>
+          </div>          
+        </div>
       </div>
       <div class="small-push-12 medium-7 large-7 columns tradesy-personal-shopper-tool-section">
         <h4 class="show-for-medium-up item-to-match-headline">Does This Item Match?</h4>
@@ -52,10 +58,8 @@ require("inc/config.php");
     <h2 class="show-for-medium-up personal-shopper-headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class="row" id="recommended-items">
-        <div class="small button show-for-medium-up" id="show-all-items-in-bag">SHOW ITEMS</div>
-        <div class="small button alert show-for-medium-up" id="clear-all-items-from-bag">EMPTY BAG</div>
       <div class="small-12 medium-12 large-12 columns border">
-        <div class="row show-for-medium-up" id="ajax-items">
+        <div class="row" id="ajax-items">
         </div>
       </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
