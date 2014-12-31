@@ -10,10 +10,6 @@ $(document).ready(function() {
       $('#girl-with-tongue').mouseout(function(){
       $('#hells-no').hide();});  
 
-      $('.recommended-item-with-image').mouseover(function() {
-        alert('fhsdfa');
-      });
-    
 //swipe right towards CEO to match item
       $("#item-to-rate").on("swiperight",function(){
       $(this).removeClass('rotate-right reset-after-rotate-right rotate-left reset-after-rotate-left');
@@ -205,19 +201,58 @@ $(document).ready(function() {
         })
     });
 
-    // user is able to select and delete item from the screen using BACKSPSACE or DELETE
-    // function delete_single_item() {
-    //     $('.recommended-item-with-button').not(this).removeClass('active');
-    //     $(this).toggleClass('active');
-    // }
-
-    $(document.body).keyup(function(event){
-        if (event.keyCode == 46 || event.keyCode == 8) {
-            event.preventDefault();
-            $(".active").remove();
-        }
+//form validation
+    $('#primary_name').blur(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').show();
+       $('#new-item-submit').attr('disabled','disabled');
+      } 
+    });
+    $('#primary_name').focus(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').hide();
+       $('#new-item-submit').removeAttr('disabled');
+      }  
     });
 
+    $('#primary_color').blur(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').show();
+       $('#new-item-submit').attr('disabled','disabled');
+      } 
+    });
+    $('#primary_color').focus(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').hide();
+       $('#new-item-submit').removeAttr('disabled');
+      } 
+    });
+
+    $('#primary_price').blur(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').show();
+       $('#new-item-submit').attr('disabled','disabled');
+      } 
+    });
+    $('#primary_price').focus(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').hide();
+       $('#new-item-submit').removeAttr('disabled');
+      } 
+    });
+
+    $('#primary_image').mouseover(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').show();
+       $('#new-item-submit').attr('disabled','disabled');
+      } 
+    });
+    $('#primary_image').mouseout(function() {
+      if ($(this).parents('div').hasClass('error')) {
+       $(this).parents('div').children('.error').hide();
+       $('#new-item-submit').removeAttr('disabled');
+      } 
+    });
 //submit form with image upload
     $('#ajax-form-new-item').submit(function(){
       $(this).ajaxSubmit({
@@ -296,37 +331,7 @@ $(document).ready(function() {
   }
 
     $('#show-all-items-in-bag').click( function() {
-        // var primaryId = $('#primary-item-image').data('primary');
         show_all_items();
-         //  $('.recommended-item-with-button').remove();
-         //  var primaryId = $('#primary-item-image').data('primary');
-
-         // $.post('ajax/show-items.php',{primary_item_id: primaryId},
-         //    function(matches){ 
-         //    console.log(matches);
-         //    var ajaxHTML = '';
-         //    for (var i=0; i<matches.length; i+=1) {
-         //      ajaxHTML += '<div class="recommended-item-with-button">';
-         //      ajaxHTML +='<img class="recommended-item-image" src="images/matches/'+matches[i].image+'" alt="">';
-         //      ajaxHTML += '<p class="item-name attributes">'+matches[i].name+'</p>';
-         //      ajaxHTML += '<p class="item-price attributes">$'+(parseFloat(matches[i].price)).toFixed(2)+'</p>';
-         //      ajaxHTML += '<p class="item-used attributes">'+matches[i].used+'</p>';
-         //      ajaxHTML +='<a href="http://www.tradesy.com" class="button add-to-bag">ADD TO BAG</a>'; 
-         //      ajaxHTML += '</div>';
-         //    }
-         //    $('#clear-all-items-from-bag').show();
-         //    $('#ajax-items')[0].innerHTML = ajaxHTML;
-         //    // $('#ajax-items').html(ajaxHTML);
-         // })     
-         //  .done(function() {
-         //  console.log('success - item matched');
-         //  })     
-         //  .fail(function() {
-         //  console.log('ajax error');
-         //  })
-
     });
-
-
 
 }); //close document.ready

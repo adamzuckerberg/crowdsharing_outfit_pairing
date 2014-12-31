@@ -17,7 +17,7 @@ require("inc/config.php");
     <nav class="top-bar" data-topbar role="navigation">
       <ul class="title-area">
         <li class="name">
-          <h1 id="tradesy">PEAR SORBET</h1>
+          <h1 id="tradesy"><span class="logo-first-letter">P</span>EAR <span class="logo-first-letter">S</span>ORBET</h1>
         </li>
       </ul>
     </nav>
@@ -65,40 +65,45 @@ require("inc/config.php");
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
       <div id="form-messages"></div>
-      <form name="ajax-form-new-item" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
-        <div class="row">
+      <form data-abide name="ajax-form-new-item" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
+       <div class="row">
           <div class="large-12 columns">
-            <label>NAME
-              <input type="text" name="primary_name" id="primary_name" required/>
-            </label>
+              <label for="name">NAME <small>required</small> 
+                <input type="text" name="primary_name" id="primary_name" required pattern="[a-zA-Z]+"/>
+              </label>
+                <small class="error">An item name is required.</small>
           </div>
         </div>
         <div class="row">
-          <div class="large-4 columns">
-            <label>COLOR
-              <input type="text" name="primary_color" id="primary_color" required/>
+          <div class="large-4 columns"> 
+            <label for="color">COLOR <small>required</small>
+              <input type="text" name="primary_color" id="primary_color" required pattern="[a-zA-Z]+"/>
             </label>
+              <small class="error">A color is required.</small>
           </div>
           <div class="large-4 columns">
-            <label>SELLING PRICE
-              <input type="text" placeholder="0.00" name="primary_price" id="primary_price" required/>
-            </label> 
+            <label for="price">SELLING PRICE <small>required</small>
+              <input type="text" placeholder="0.00" name="primary_price" id="primary_price" required pattern="[-+]?([0-9]*\.[0-9]+|[0-9]+)"/>
+            </label>
+              <small class="error">A price is required.</small> 
           </div>
           <div class="large-4 columns">
-            <label>CONDITION
+            <label for="condition">CONDITION <small>required</small>
               <select name="primary_condition" id="primary_condition" required>
                 <option value="New">New</option>
                 <option value="Like New">Like New</option>
                 <option value="Gently Used">Gently Used</option>
               </select>
             </label>
+              <small class="error">Please select the condition of the item.</small> 
           </div>
         </div>
         <div class="row">
           <div class="large-6 columns upload-input">
-            <label>UPLOAD IMAGE
-              <input type="file" name="primary_image" id="primary_image" placeholder="image.jpg" /><br>
+            <label for="image">UPLOAD IMAGE<small> Required</small>
+              <input type="file" name="primary_image" id="primary_image" placeholder="image.jpg" required/><br>
             </label> 
+            <small class="error">Please upload a .jpg image.</small> 
           </div>      
         </div>
         <div class="row">
@@ -107,18 +112,17 @@ require("inc/config.php");
           </div>
           <div class="large-9 columns"></div>
         </div>
-      <form>
+      </form>
      <a class="close-reveal-modal">&#215;</a>
     </div>
-    <div class="row"></div>
+    <div class="row"></div> 
       <script src="js/vendor/jquery.js"></script>
       <script src="js/foundation.min.js"></script>
+      <script src="js/foundation/foundation.abide.js"></script>
       <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-      <script src="js/jquery.form.min.js"></script>
       <script src="js/app.js"></script>
-      <script>
-        $(document).foundation();
-      </script>
+      <script> $(document).foundation();</script>
+      <script src="js/jquery.form.min.js"></script>
   </body>
   <footer class="row">
     <div class="large-12 columns">
