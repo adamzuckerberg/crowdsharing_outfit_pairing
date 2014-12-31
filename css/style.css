@@ -25,8 +25,8 @@ font-weight: 500;
 color: #B6B7BD;
 }
 .border {
-/*border: 2px solid red;*/
-}
+/*border: 3px solid red;
+*/}
 #add-item-button {
 color: !important #FFF;
 }
@@ -181,16 +181,6 @@ opacity: 0;
 margin-left: -200px;
 }
 .rotate-left-primary-item {
-/*-webkit-transform: rotate(-30deg) scale(0.2);
--moz-transform:    rotate(-30deg) scale(0.2);
--ms-transform:     rotate(-30deg) scale(0.2);
--o-transform:      rotate(-30deg) scale(0.2);
-transform:         rotate(-30deg) scale(0.2);
--webkit-transition: 1.4s;
--moz-transition: 1.4s;
--o-transition: 1.4s;
-transition: 1.4s;
-margin-left: -150px;*/
 opacity: 0;
 }
 .reset-after-rotate-left-primary-item {

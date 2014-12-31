@@ -115,7 +115,6 @@ $(document).ready(function() {
           ajaxHTML += '';
           $('#clear-all-items-from-bag').show();
           $('#ajax-items')[0].innerHTML = ajaxHTML;
-          // $('#ajax-items').html(ajaxHTML);
        })     
         .done(function() {
         console.log('success - item matched');
@@ -185,8 +184,6 @@ $(document).ready(function() {
       })  
     });
 
-
-
    $('#clear-all-items-from-bag').click(function(){
       var primaryId = $('#primary-item-image').data('primary');
       $.post( "ajax/destroy-items.php",{primary_item_id: primaryId}, 
@@ -253,14 +250,14 @@ $(document).ready(function() {
        $('#new-item-submit').removeAttr('disabled');
       } 
     });
+
 //submit form with image upload
     $('#ajax-form-new-item').submit(function(){
-
       if ($('#ajax-form-new-item div.error').length > 0) {
         $('#new-item-submit').attr('disabled','disabled');
         return false;
       }
-      
+
       $(this).ajaxSubmit({
           success: function(data, statusText, xhr, $form) {
             $('.reveal-modal').foundation('reveal', 'close');
@@ -285,6 +282,7 @@ $(document).ready(function() {
 
       var primaryId = $('#primary-item-image').data('primary');
       console.log(primaryId);
+      
 //reveal new match item
        $.post('ajax/show-new-primary-item.php',{primary_item_id: primaryId}, 
           function(data){

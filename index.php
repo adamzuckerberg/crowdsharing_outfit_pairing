@@ -29,10 +29,10 @@ require("inc/config.php");
         <p class="show-for-medium-up primary-item-price">$175.50</p>
         <p class="show-for-medium-up primary-item-condition">New</p>
         <div class="row">
-          <div class="small-6 medium-6 large-6 columns">
-            <a href="#" style="color:white;font-weight:400;" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
+          <div class="small-6 medium-6 large-6 columns border" id="add-item-button">
+            <a href="#" data-reveal-id="add-item-modal" class="radius small button">ADD ITEM</a>
           </div>
-          <div class="small-6 medium-6 large-6 columns">
+          <div class="small-6 medium-6 large-6 columns border" id="delete-outfit-button">
             <a href="#" id="clear-all-items-from-bag" class="radius small button alert">DELETE OUTFIT</a>
           </div>          
         </div>
