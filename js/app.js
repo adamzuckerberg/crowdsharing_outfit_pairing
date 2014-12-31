@@ -255,6 +255,12 @@ $(document).ready(function() {
     });
 //submit form with image upload
     $('#ajax-form-new-item').submit(function(){
+
+      if ($('#ajax-form-new-item div.error').length > 0) {
+        $('#new-item-submit').attr('disabled','disabled');
+        return false;
+      }
+      
       $(this).ajaxSubmit({
           success: function(data, statusText, xhr, $form) {
             $('.reveal-modal').foundation('reveal', 'close');
