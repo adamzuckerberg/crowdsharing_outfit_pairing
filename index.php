@@ -6,7 +6,7 @@ require("inc/config.php");
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PearSorbet | CrowdPaired Styles </title>
+    <title>PearSorbet | Style CrowdPairing </title>
     <link rel="shortcut icon" href="http://www.tradesy-outfits.com/images/favicon.ico" />
     <link rel="stylesheet" href="css/foundation.min.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -68,7 +68,7 @@ require("inc/config.php");
       <form data-abide name="ajax-form-new-item" id="ajax-form-new-item" method="post" action="ajax/new-item.php" enctype="multipart/form-data">
        <div class="row">
           <div class="large-12 columns">
-              <label for="name">NAME <small>required</small> 
+              <label>NAME <small>required</small> 
                 <input type="text" name="primary_name" id="primary_name" required pattern="[a-zA-Z]+"/>
               </label>
                 <small class="error">An item name is required.</small>
@@ -76,19 +76,19 @@ require("inc/config.php");
         </div>
         <div class="row">
           <div class="large-4 columns"> 
-            <label for="color">COLOR <small>required</small>
+            <label>COLOR <small>required</small>
               <input type="text" name="primary_color" id="primary_color" required pattern="[a-zA-Z]+"/>
             </label>
               <small class="error">A color is required.</small>
           </div>
           <div class="large-4 columns">
-            <label for="price">SELLING PRICE <small>required</small>
+            <label>SELLING PRICE <small>required</small>
               <input type="text" placeholder="0.00" name="primary_price" id="primary_price" required pattern="[-+]?([0-9]*\.[0-9]+|[0-9]+)"/>
             </label>
               <small class="error">A price is required.</small> 
           </div>
           <div class="large-4 columns">
-            <label for="condition">CONDITION <small>required</small>
+            <label>CONDITION <small>required</small>
               <select name="primary_condition" id="primary_condition" required>
                 <option value="New">New</option>
                 <option value="Like New">Like New</option>
@@ -100,7 +100,7 @@ require("inc/config.php");
         </div>
         <div class="row">
           <div class="large-6 columns upload-input">
-            <label for="image">UPLOAD IMAGE<small> Required</small>
+            <label>UPLOAD IMAGE<small> Required</small>
               <input type="file" name="primary_image" id="primary_image" placeholder="image.jpg" required/><br>
             </label> 
             <small class="error">Please upload a .jpg image.</small> 
