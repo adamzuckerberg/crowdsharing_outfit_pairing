@@ -4,7 +4,6 @@ require(__dir__."/../inc/config.php");
 // Save the image
 define('UPLOAD_DIR', '../images/items/');
 $image = $_FILES['primary_image'];
-error_log($image['type']);
 if ($image['type'] == "image/jpg" || $image['type'] == "image/jpeg") {
 	$fileName = uniqid() . '.jpg';
 	$file = UPLOAD_DIR . $fileName;
