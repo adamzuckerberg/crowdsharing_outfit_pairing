@@ -52,9 +52,6 @@ require("inc/config.php");
           </div>
       </div>
     </div>
-    <div class="row">
-      <div class="large-12 show-for-medium-up"></div>
-    </div>
     <h2 class="show-for-medium-up personal-shopper-headline">CREATE THE PERFECT OUTFIT WITH THESE ITEMS</h2>
     <h2 class="show-for-medium-up personal-shopper-tagline">ALL ITEMS WERE PERSONALLY SELECTED BY OUR IN-HOUSE FASHION EXPERTS</h2>
     <div class="row" id="recommended-items">
@@ -62,6 +59,7 @@ require("inc/config.php");
         <div class="row" id="ajax-items">
         </div>
       </div>
+    </div>
     <div id="add-item-modal" class="reveal-modal" data-reveal>
       <h2>Add a New Item</h2>
       <div id="form-messages"></div>
@@ -101,7 +99,7 @@ require("inc/config.php");
         <div class="row">
           <div class="large-6 columns upload-input">
             <label>UPLOAD IMAGE<small> Required</small>
-              <input type="file" name="primary_image" id="primary_image" placeholder="image.jpg" required/><br>
+              <input type="file" name="primary_image" id="primary_image" required/><br>
             </label> 
             <small class="error">Please upload a .jpg image.</small> 
           </div>      
@@ -124,16 +122,4 @@ require("inc/config.php");
       <script> $(document).foundation();</script>
       <script src="js/jquery.form.min.js"></script>
   </body>
-  <footer class="row">
-    <div class="large-12 columns">
-      <div class="row">
-        <div class="large-6 columns">
-        </div>
-        <div class="large-6 columns">
-          <ul class="inline-list right">
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
 </html>
