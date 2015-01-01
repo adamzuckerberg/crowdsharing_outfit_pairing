@@ -295,11 +295,11 @@ $(document).ready(function() {
             $('.primary-item-price').html('$'+data.item_price);
             $('.primary-item-condition').html(data.item_condition);
             $('#primary-item-image').addClass('reset-after-rotate-left-primary-item');
+            show_all_items();
             },500);
           })        
           .done(function() {
           console.log('success - item matched');
-          show_all_items();
           })     
           .fail(function() {
           console.log('ajax error');
