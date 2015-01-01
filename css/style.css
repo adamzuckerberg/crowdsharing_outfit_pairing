@@ -24,9 +24,9 @@ letter-spacing: 2px;
 font-weight: 500;
 color: #B6B7BD;
 }
-.border {
-/*border: 3px solid red;
-*/}
+/*.border {
+border: 3px solid red;
+}*/
 #add-item-button {
 color: !important #FFF;
 }
@@ -101,6 +101,8 @@ transition-property: opacity, border-radius, border;
 transition-duration: .2s, .7s, .3s;
 }
 #primary-item img {
+max-width: 300px;
+max-height: 300px;
 padding: 10px;
 border-radius: 20px;
 transition-duration: .5s;	
