@@ -1,3 +1,4 @@
+/*global $:false */
 $(document).ready(function() {
 
       $('#tracy-dinunzio').mouseover(function(){
@@ -39,7 +40,7 @@ $(document).ready(function() {
           })     
           .fail(function() {
           console.log('ajax error');
-          })
+          });
 
         //show all matched items
          $.get('ajax/show-items.php',
@@ -63,7 +64,7 @@ $(document).ready(function() {
           })     
           .fail(function() {
           console.log('ajax error');
-          })
+          });
 
       }); //end swipe right on CEO
 
@@ -97,7 +98,7 @@ $(document).ready(function() {
           })     
           .fail(function() {
           console.log('ajax error');
-          })
+          });
 
       //show all matched items
        $.get('ajax/show-items.php',
@@ -122,7 +123,7 @@ $(document).ready(function() {
         })     
         .fail(function() {
         console.log('ajax error');
-        })
+        });
 
     }); //end click right on CEO
 
@@ -152,7 +153,7 @@ $(document).ready(function() {
       })     
       .fail(function() {
       console.log('ajax error');
-      })  
+      });
   });
    
 //click left on unhappy woman to go to next item
@@ -181,13 +182,13 @@ $(document).ready(function() {
       })     
       .fail(function() {
       console.log('ajax error');
-      })  
+      });  
     });
 
    $('#clear-all-items-from-bag').click(function(){
       var primaryId = $('#primary-item-image').data('primary');
       $.post( "ajax/destroy-items.php",{primary_item_id: primaryId}, 
-        function(data){
+        function(){
         $('#ajax-items div').remove(); 
       })
         .done(function() {
@@ -195,7 +196,7 @@ $(document).ready(function() {
         })     
         .fail(function() {
         console.log('ajax error');
-        })
+        });
     });
 
 //form validation
@@ -259,7 +260,7 @@ $(document).ready(function() {
       }
 
       $(this).ajaxSubmit({
-          success: function(data, statusText, xhr, $form) {
+          success: function(data) {
             $('.reveal-modal').foundation('reveal', 'close');
             $('#primary-item-image').data('primary',data.item_id);
             $('#primary-item-image').attr('src',data.image);
@@ -302,7 +303,7 @@ $(document).ready(function() {
           })     
           .fail(function() {
           console.log('ajax error');
-          })
+          });
 
     }); //end click primary item
 
@@ -331,7 +332,7 @@ $(document).ready(function() {
         })     
         .fail(function() {
         console.log('ajax error');
-        })
+        });
   }
 
     $('#show-all-items-in-bag').click( function() {
